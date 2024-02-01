@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassRegistryDataSet.Designer.cs">
+    <Compile Include="ClassRegistryDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ClassRegistryDataSet.xsd</DependentUpon>
+      <DependentUpon>ClassRegistryDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,16 +71,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassRegistryDataSet.xsc">
-      <DependentUpon>ClassRegistryDataSet.xsd</DependentUpon>
+    <None Include="ClassRegistryDataSet1.xsc">
+      <DependentUpon>ClassRegistryDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="ClassRegistryDataSet.xsd">
+    <None Include="ClassRegistryDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClassRegistryDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ClassRegistryDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassRegistryDataSet.xss">
-      <DependentUpon>ClassRegistryDataSet.xsd</DependentUpon>
+    <None Include="ClassRegistryDataSet1.xss">
+      <DependentUpon>ClassRegistryDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

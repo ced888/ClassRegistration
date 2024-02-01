@@ -20,9 +20,9 @@ namespace ClassRegistry {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ClassRegistryDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ClassRegistryDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ClassRegistryDataSet : global::System.Data.DataSet {
+    public partial class ClassRegistryDataSet1 : global::System.Data.DataSet {
         
         private CartDataTable tableCart;
         
@@ -60,7 +60,7 @@ namespace ClassRegistry {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ClassRegistryDataSet() {
+        public ClassRegistryDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -71,7 +71,7 @@ namespace ClassRegistry {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ClassRegistryDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ClassRegistryDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -248,7 +248,7 @@ namespace ClassRegistry {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ClassRegistryDataSet cln = ((ClassRegistryDataSet)(base.Clone()));
+            ClassRegistryDataSet1 cln = ((ClassRegistryDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -391,9 +391,9 @@ namespace ClassRegistry {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ClassRegistryDataSet";
+            this.DataSetName = "ClassRegistryDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ClassRegistryDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ClassRegistryDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCart = new CartDataTable();
@@ -505,7 +505,7 @@ namespace ClassRegistry {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ClassRegistryDataSet ds = new ClassRegistryDataSet();
+            ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -783,7 +783,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1138,7 +1138,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1416,7 +1416,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1685,7 +1685,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1988,7 +1988,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2303,7 +2303,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2609,7 +2609,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2858,7 +2858,7 @@ namespace ClassRegistry {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClassRegistryDataSet ds = new ClassRegistryDataSet();
+                ClassRegistryDataSet1 ds = new ClassRegistryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3817,7 +3817,7 @@ namespace ClassRegistry {
         }
     }
 }
-namespace ClassRegistry.ClassRegistryDataSetTableAdapters {
+namespace ClassRegistry.ClassRegistryDataSet1TableAdapters {
     
     
     /// <summary>
@@ -3957,7 +3957,7 @@ namespace ClassRegistry.ClassRegistryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3974,7 +3974,7 @@ namespace ClassRegistry.ClassRegistryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.CartDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.CartDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3987,9 +3987,9 @@ namespace ClassRegistry.ClassRegistryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.CartDataTable GetData() {
+        public virtual ClassRegistryDataSet1.CartDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.CartDataTable dataTable = new ClassRegistryDataSet.CartDataTable();
+            ClassRegistryDataSet1.CartDataTable dataTable = new ClassRegistryDataSet1.CartDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3997,14 +3997,14 @@ namespace ClassRegistry.ClassRegistryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.CartDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.CartDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Cart");
         }
         
@@ -4224,7 +4224,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4242,7 +4242,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.Course_SectionsDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.Course_SectionsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4255,9 +4255,9 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.Course_SectionsDataTable GetData() {
+        public virtual ClassRegistryDataSet1.Course_SectionsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.Course_SectionsDataTable dataTable = new ClassRegistryDataSet.Course_SectionsDataTable();
+            ClassRegistryDataSet1.Course_SectionsDataTable dataTable = new ClassRegistryDataSet1.Course_SectionsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4265,14 +4265,14 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.Course_SectionsDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.Course_SectionsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Course_Sections");
         }
         
@@ -4564,7 +4564,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4581,7 +4581,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.CoursesDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.CoursesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4594,9 +4594,9 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.CoursesDataTable GetData() {
+        public virtual ClassRegistryDataSet1.CoursesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.CoursesDataTable dataTable = new ClassRegistryDataSet.CoursesDataTable();
+            ClassRegistryDataSet1.CoursesDataTable dataTable = new ClassRegistryDataSet1.CoursesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4604,14 +4604,14 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.CoursesDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.CoursesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Courses");
         }
         
@@ -4866,7 +4866,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4883,7 +4883,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.PrerequisiteDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.PrerequisiteDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4896,9 +4896,9 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.PrerequisiteDataTable GetData() {
+        public virtual ClassRegistryDataSet1.PrerequisiteDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.PrerequisiteDataTable dataTable = new ClassRegistryDataSet.PrerequisiteDataTable();
+            ClassRegistryDataSet1.PrerequisiteDataTable dataTable = new ClassRegistryDataSet1.PrerequisiteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4906,14 +4906,14 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.PrerequisiteDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.PrerequisiteDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Prerequisite");
         }
         
@@ -5124,7 +5124,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5141,7 +5141,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.StudentsDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.StudentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5154,9 +5154,9 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.StudentsDataTable GetData() {
+        public virtual ClassRegistryDataSet1.StudentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.StudentsDataTable dataTable = new ClassRegistryDataSet.StudentsDataTable();
+            ClassRegistryDataSet1.StudentsDataTable dataTable = new ClassRegistryDataSet1.StudentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5164,14 +5164,14 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.StudentsDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.StudentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Students");
         }
         
@@ -5469,7 +5469,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5486,7 +5486,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.TakenDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.TakenDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5499,9 +5499,9 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.TakenDataTable GetData() {
+        public virtual ClassRegistryDataSet1.TakenDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.TakenDataTable dataTable = new ClassRegistryDataSet.TakenDataTable();
+            ClassRegistryDataSet1.TakenDataTable dataTable = new ClassRegistryDataSet1.TakenDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5509,14 +5509,14 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.TakenDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.TakenDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Taken");
         }
         
@@ -5731,7 +5731,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5748,7 +5748,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.Time_SlotDataTable dataTable) {
+        public virtual int Fill(ClassRegistryDataSet1.Time_SlotDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5761,9 +5761,9 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.Time_SlotDataTable GetData() {
+        public virtual ClassRegistryDataSet1.Time_SlotDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClassRegistryDataSet.Time_SlotDataTable dataTable = new ClassRegistryDataSet.Time_SlotDataTable();
+            ClassRegistryDataSet1.Time_SlotDataTable dataTable = new ClassRegistryDataSet1.Time_SlotDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5771,14 +5771,14 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet.Time_SlotDataTable dataTable) {
+        public virtual int Update(ClassRegistryDataSet1.Time_SlotDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClassRegistryDataSet dataSet) {
+        public virtual int Update(ClassRegistryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Time_Slot");
         }
         
@@ -6074,7 +6074,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString;
+            this._connection.ConnectionString = global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6093,7 +6093,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClassRegistryDataSet.sp_search_by_course_nameDataTable dataTable, string search_string) {
+        public virtual int Fill(ClassRegistryDataSet1.sp_search_by_course_nameDataTable dataTable, string search_string) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((search_string == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -6112,7 +6112,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClassRegistryDataSet.sp_search_by_course_nameDataTable GetData(string search_string) {
+        public virtual ClassRegistryDataSet1.sp_search_by_course_nameDataTable GetData(string search_string) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((search_string == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -6120,7 +6120,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(search_string));
             }
-            ClassRegistryDataSet.sp_search_by_course_nameDataTable dataTable = new ClassRegistryDataSet.sp_search_by_course_nameDataTable();
+            ClassRegistryDataSet1.sp_search_by_course_nameDataTable dataTable = new ClassRegistryDataSet1.sp_search_by_course_nameDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6155,22 +6155,22 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         private void InitCommandCollection() {
             this._commandCollection = new global::System.Data.IDbCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.sp_create_all_tables";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.sp_delete_all_tables";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandText = "dbo.sp_populate_courses";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ClassRegistry.Properties.Settings.Default.ClassRegistryConnectionString1);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "dbo.sp_test_trans";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6494,7 +6494,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ClassRegistryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ClassRegistryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._coursesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Courses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -6567,7 +6567,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ClassRegistryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ClassRegistryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._coursesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Courses.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -6633,7 +6633,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ClassRegistryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ClassRegistryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._takenTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Taken.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -6723,7 +6723,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ClassRegistryDataSet dataSet) {
+        public virtual int UpdateAll(ClassRegistryDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

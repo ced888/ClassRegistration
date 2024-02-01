@@ -24,11 +24,16 @@ namespace ClassRegistry
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'classRegistryDataSet.Cart' table. You can move, or remove it, as needed.
-            this.cartTableAdapter.Fill(this.classRegistryDataSet.Cart);
-            // TODO: This line of code loads data into the 'classRegistryDataSet.Courses' table. You can move, or remove it, as needed.
-            this.coursesTableAdapter.Fill(this.classRegistryDataSet.Courses);
-
+            // TODO: This line of code loads data into the 'classRegistryDataSet1.Course_Sections' table. You can move, or remove it, as needed.
+            this.course_SectionsTableAdapter.Fill(this.classRegistryDataSet1.Course_Sections);
+            try
+            {
+                this.sp_search_by_course_nameTableAdapter.Fill(this.classRegistryDataSet1.sp_search_by_course_name, search_stringToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,6 +44,23 @@ namespace ClassRegistry
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void search_stringToolStripLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_stringToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.sp_search_by_course_nameTableAdapter.Fill(this.classRegistryDataSet1.sp_search_by_course_name, search_stringToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

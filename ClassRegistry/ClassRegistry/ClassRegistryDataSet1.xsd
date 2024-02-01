@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ClassRegistryDataSet" targetNamespace="http://tempuri.org/ClassRegistryDataSet.xsd" xmlns:mstns="http://tempuri.org/ClassRegistryDataSet.xsd" xmlns="http://tempuri.org/ClassRegistryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ClassRegistryDataSet1" targetNamespace="http://tempuri.org/ClassRegistryDataSet1.xsd" xmlns:mstns="http://tempuri.org/ClassRegistryDataSet1.xsd" xmlns="http://tempuri.org/ClassRegistryDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ClassRegistryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ClassRegistryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ClassRegistry.Properties.Settings.GlobalReference.Default.ClassRegistryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ClassRegistryConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ClassRegistryConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ClassRegistry.Properties.Settings.GlobalReference.Default.ClassRegistryConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CartTableAdapter" GeneratorDataComponentClassName="CartTableAdapter" Name="Cart" UserDataComponentName="CartTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Cart" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Cart" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Cart] ([student_ID], [course_section_ID]) VALUES (@student_ID, @course_section_ID)</CommandText>
@@ -35,7 +35,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Course_SectionsTableAdapter" GeneratorDataComponentClassName="Course_SectionsTableAdapter" Name="Course_Sections" UserDataComponentName="Course_SectionsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Course_Sections" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Course_Sections" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Course_Sections] WHERE (([course_section_ID] = @Original_course_section_ID) AND ([course_ID] = @Original_course_ID) AND ([time_slot_ID] = @Original_time_slot_ID) AND ([capacity] = @Original_capacity) AND ([currently_enrolled] = @Original_currently_enrolled) AND ([semester] = @Original_semester) AND ([calendar_year] = @Original_calendar_year))</CommandText>
@@ -108,7 +108,7 @@ SELECT course_section_ID, course_ID, time_slot_ID, capacity, currently_enrolled,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CoursesTableAdapter" GeneratorDataComponentClassName="CoursesTableAdapter" Name="Courses" UserDataComponentName="CoursesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Courses" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Courses" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Courses] WHERE (([course_ID] = @Original_course_ID) AND ([course_name] = @Original_course_name))</CommandText>
@@ -155,7 +155,7 @@ SELECT course_ID, course_name FROM Courses WHERE (course_ID = @course_ID)</Comma
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrerequisiteTableAdapter" GeneratorDataComponentClassName="PrerequisiteTableAdapter" Name="Prerequisite" UserDataComponentName="PrerequisiteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Prerequisite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Prerequisite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Prerequisite] ([course_ID], [prereq_course_ID]) VALUES (@course_ID, @prereq_course_ID)</CommandText>
@@ -181,7 +181,7 @@ SELECT course_ID, course_name FROM Courses WHERE (course_ID = @course_ID)</Comma
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StudentsTableAdapter" GeneratorDataComponentClassName="StudentsTableAdapter" Name="Students" UserDataComponentName="StudentsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Students" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Students] WHERE (([student_ID] = @Original_student_ID) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ([is_active] = @Original_is_active))</CommandText>
@@ -243,7 +243,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TakenTableAdapter" GeneratorDataComponentClassName="TakenTableAdapter" Name="Taken" UserDataComponentName="TakenTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Taken" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Taken" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Taken] ([student_ID], [course_ID], [taken], [calendar_year], [semester]) VALUES (@student_ID, @course_ID, @taken, @calendar_year, @semester)</CommandText>
@@ -275,7 +275,7 @@ SELECT student_ID, first_name, last_name, is_active FROM Students WHERE (student
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Time_SlotTableAdapter" GeneratorDataComponentClassName="Time_SlotTableAdapter" Name="Time_Slot" UserDataComponentName="Time_SlotTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.Time_Slot" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.Time_Slot" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Time_Slot] WHERE (([time_slot_ID] = @Original_time_slot_ID) AND ([schedule_day] = @Original_schedule_day) AND ([start_time] = @Original_start_time) AND ([end_time] = @Original_end_time))</CommandText>
@@ -333,7 +333,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_search_by_course_nameTableAdapter" GeneratorDataComponentClassName="sp_search_by_course_nameTableAdapter" Name="sp_search_by_course_name" UserDataComponentName="sp_search_by_course_nameTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.sp_search_by_course_name" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.sp_search_by_course_name" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_search_by_course_name</CommandText>
@@ -352,7 +352,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
           </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.sp_create_all_tables" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_create_all_tables" MethodsParameterType="CLR" Modifier="Public" Name="sp_create_all_tables" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_create_all_tables">
+          <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.sp_create_all_tables" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_create_all_tables" MethodsParameterType="CLR" Modifier="Public" Name="sp_create_all_tables" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_create_all_tables">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_create_all_tables</CommandText>
@@ -362,7 +362,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.sp_delete_all_tables" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_delete_all_tables" MethodsParameterType="CLR" Modifier="Public" Name="sp_delete_all_tables" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_delete_all_tables">
+          <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.sp_delete_all_tables" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_delete_all_tables" MethodsParameterType="CLR" Modifier="Public" Name="sp_delete_all_tables" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_delete_all_tables">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_delete_all_tables</CommandText>
@@ -372,7 +372,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.sp_populate_courses" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_populate_courses" MethodsParameterType="CLR" Modifier="Public" Name="sp_populate_courses" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_populate_courses">
+          <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.sp_populate_courses" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_populate_courses" MethodsParameterType="CLR" Modifier="Public" Name="sp_populate_courses" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_populate_courses">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_populate_courses</CommandText>
@@ -382,7 +382,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ClassRegistryConnectionString (Settings)" DbObjectName="ClassRegistry.dbo.sp_test_trans" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_test_trans" MethodsParameterType="CLR" Modifier="Public" Name="sp_test_trans" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_test_trans">
+          <DbSource ConnectionRef="ClassRegistryConnectionString1 (Settings)" DbObjectName="ClassRegistry.dbo.sp_test_trans" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_test_trans" MethodsParameterType="CLR" Modifier="Public" Name="sp_test_trans" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_test_trans">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_test_trans</CommandText>
@@ -396,7 +396,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ClassRegistryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ClassRegistryDataSet" msprop:Generator_DataSetName="ClassRegistryDataSet">
+  <xs:element name="ClassRegistryDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ClassRegistryDataSet1" msprop:Generator_DataSetName="ClassRegistryDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Cart" msprop:Generator_RowEvHandlerName="CartRowChangeEventHandler" msprop:Generator_RowDeletedName="CartRowDeleted" msprop:Generator_RowDeletingName="CartRowDeleting" msprop:Generator_RowEvArgName="CartRowChangeEvent" msprop:Generator_TablePropName="Cart" msprop:Generator_RowChangedName="CartRowChanged" msprop:Generator_RowChangingName="CartRowChanging" msprop:Generator_TableClassName="CartDataTable" msprop:Generator_RowClassName="CartRow" msprop:Generator_TableVarName="tableCart" msprop:Generator_UserTableName="Cart">
