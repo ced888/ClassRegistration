@@ -1,3 +1,4 @@
 .vs
 ClassRegistry/bin/
 ClassRegistry/obj/
+__pycache__
