@@ -74,6 +74,7 @@ namespace ClassRegistry
             int courseID = (int)row.Row.ItemArray[5];
         }
 
+        //variable to store the logged in student's ID
         public int? loggedInStudentID = null;
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -83,14 +84,21 @@ namespace ClassRegistry
             {
  
                 var studentsTableAdapter = new Students1TableAdapter();
-                var studentExists = studentsTableAdapter.FindByStudentID(studentID);
+                var studentResults = studentsTableAdapter.FindByStudentID(studentID);
 
-                if (studentExists != null && studentExists is DataTable dataTable && dataTable.Rows.Count > 0)
+
+                if (studentResults != null && studentResults.Rows.Count > 0)
                 {
                     loggedInStudentID = studentID;
+
+                    //Getting the Student's name, there's probably a better way
+                    var studentName = studentResults[0]["first_name"].ToString().Trim() + " "
+                        + studentResults[0]["last_name"].ToString().Trim();
+
+
                     MessageBox.Show("You have successfully logged in!");
                     loggedInLabel.Visible = true;
-                    loggedInLabel.Text = "Logged in as: " + studentID;
+                    loggedInLabel.Text = "Logged in as: " + studentID + " : " + studentName;
                     logOut.Visible = true;
                     loginButton.Visible = false;
                     iDField.ReadOnly = true;

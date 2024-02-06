@@ -309,11 +309,10 @@
             this.loggedInLabel.TabIndex = 13;
             this.loggedInLabel.Text = "logged in label";
             this.loggedInLabel.Visible = false;
-
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(397, 18);
+            this.logOut.Location = new System.Drawing.Point(665, 13);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(75, 23);
             this.logOut.TabIndex = 14;
