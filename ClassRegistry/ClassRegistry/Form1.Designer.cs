@@ -29,50 +29,53 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Cart = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_addToCart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
-            this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
+            this.dataGridView_Course = new System.Windows.Forms.DataGridView();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.search_stringToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.search_stringToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView_CourseSections = new System.Windows.Forms.DataGridView();
+            this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
+            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
             this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
-            this.coursesectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeslotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_course_Sections_by_course_IDTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter();
+            this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentlyenrolledDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendaryearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
+            this.timeslotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             this.fillToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView2
+            // dataGridView_Cart
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 304);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(775, 141);
-            this.dataGridView2.TabIndex = 1;
+            this.dataGridView_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Cart.Location = new System.Drawing.Point(12, 304);
+            this.dataGridView_Cart.Name = "dataGridView_Cart";
+            this.dataGridView_Cart.Size = new System.Drawing.Size(775, 141);
+            this.dataGridView_Cart.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -101,17 +104,17 @@
             this.button1.Text = "Log in";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_addToCart
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(688, 245);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            this.button2.Size = new System.Drawing.Size(99, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Add To Cart";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addToCart.Location = new System.Drawing.Point(688, 245);
+            this.btn_addToCart.Name = "btn_addToCart";
+            this.btn_addToCart.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
+            this.btn_addToCart.Size = new System.Drawing.Size(99, 27);
+            this.btn_addToCart.TabIndex = 7;
+            this.btn_addToCart.Text = "Add To Cart";
+            this.btn_addToCart.UseVisualStyleBackColor = true;
+            this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
             // 
             // label3
             // 
@@ -145,42 +148,22 @@
             this.label4.Text = "Current Schedule";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // dataGridView1
+            // dataGridView_Course
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Course.AllowUserToAddRows = false;
+            this.dataGridView_Course.AllowUserToDeleteRows = false;
+            this.dataGridView_Course.AutoGenerateColumns = false;
+            this.dataGridView_Course.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Course.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coursenameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.spsearchbycoursenameBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(169, 150);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // coursenameDataGridViewTextBoxColumn
-            // 
-            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
-            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // spsearchbycoursenameBindingSource
-            // 
-            this.spsearchbycoursenameBindingSource.DataMember = "sp_search_by_course_name";
-            this.spsearchbycoursenameBindingSource.DataSource = this.classRegistryDataSet1;
-            // 
-            // classRegistryDataSet1
-            // 
-            this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
-            this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sp_search_by_course_nameTableAdapter
-            // 
-            this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
+            this.dataGridView_Course.DataSource = this.spsearchbycoursenameBindingSource;
+            this.dataGridView_Course.Location = new System.Drawing.Point(9, 86);
+            this.dataGridView_Course.Name = "dataGridView_Course";
+            this.dataGridView_Course.ReadOnly = true;
+            this.dataGridView_Course.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Course.Size = new System.Drawing.Size(169, 150);
+            this.dataGridView_Course.TabIndex = 0;
+            this.dataGridView_Course.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // fillToolStrip
             // 
@@ -209,61 +192,74 @@
             this.search_stringToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.search_stringToolStripTextBox.TextChanged += new System.EventHandler(this.search_stringToolStripTextBox_TextChanged);
             // 
-            // dataGridView3
+            // dataGridView_CourseSections
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.coursesectionIDDataGridViewTextBoxColumn,
-            this.courseIDDataGridViewTextBoxColumn,
-            this.timeslotIDDataGridViewTextBoxColumn,
+            this.dataGridView_CourseSections.AllowUserToAddRows = false;
+            this.dataGridView_CourseSections.AllowUserToDeleteRows = false;
+            this.dataGridView_CourseSections.AutoGenerateColumns = false;
+            this.dataGridView_CourseSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CourseSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.capacityDataGridViewTextBoxColumn,
             this.currentlyenrolledDataGridViewTextBoxColumn,
             this.semesterDataGridViewTextBoxColumn,
-            this.calendaryearDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.courseSectionsBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(184, 86);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(603, 150);
-            this.dataGridView3.TabIndex = 12;
+            this.calendaryearDataGridViewTextBoxColumn,
+            this.timeslotIDDataGridViewTextBoxColumn});
+            this.dataGridView_CourseSections.DataSource = this.spcourseSectionsbycourseIDBindingSource;
+            this.dataGridView_CourseSections.Location = new System.Drawing.Point(184, 86);
+            this.dataGridView_CourseSections.Name = "dataGridView_CourseSections";
+            this.dataGridView_CourseSections.ReadOnly = true;
+            this.dataGridView_CourseSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_CourseSections.Size = new System.Drawing.Size(603, 150);
+            this.dataGridView_CourseSections.TabIndex = 12;
             // 
-            // classRegistryDataSet1BindingSource
+            // spcourseSectionsbycourseIDBindingSource
             // 
-            this.classRegistryDataSet1BindingSource.DataSource = this.classRegistryDataSet1;
-            this.classRegistryDataSet1BindingSource.Position = 0;
+            this.spcourseSectionsbycourseIDBindingSource.DataMember = "sp_course_Sections_by_course_ID";
+            this.spcourseSectionsbycourseIDBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
             // 
             // courseSectionsBindingSource
             // 
             this.courseSectionsBindingSource.DataMember = "Course_Sections";
             this.courseSectionsBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
             // 
+            // classRegistryDataSet1BindingSource
+            // 
+            this.classRegistryDataSet1BindingSource.DataSource = this.classRegistryDataSet1;
+            this.classRegistryDataSet1BindingSource.Position = 0;
+            // 
+            // classRegistryDataSet1
+            // 
+            this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
+            this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coursenameDataGridViewTextBoxColumn
+            // 
+            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
+            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spsearchbycoursenameBindingSource
+            // 
+            this.spsearchbycoursenameBindingSource.DataMember = "sp_search_by_course_name";
+            this.spsearchbycoursenameBindingSource.DataSource = this.classRegistryDataSet1;
+            // 
+            // sp_search_by_course_nameTableAdapter
+            // 
+            this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
+            // 
             // course_SectionsTableAdapter
             // 
             this.course_SectionsTableAdapter.ClearBeforeFill = true;
             // 
-            // coursesectionIDDataGridViewTextBoxColumn
+            // sp_course_Sections_by_course_IDTableAdapter
             // 
-            this.coursesectionIDDataGridViewTextBoxColumn.DataPropertyName = "course_section_ID";
-            this.coursesectionIDDataGridViewTextBoxColumn.HeaderText = "course_section_ID";
-            this.coursesectionIDDataGridViewTextBoxColumn.Name = "coursesectionIDDataGridViewTextBoxColumn";
-            this.coursesectionIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sp_course_Sections_by_course_IDTableAdapter.ClearBeforeFill = true;
             // 
-            // courseIDDataGridViewTextBoxColumn
+            // spcourseSectionsbycourseIDBindingSource1
             // 
-            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "course_ID";
-            this.courseIDDataGridViewTextBoxColumn.HeaderText = "course_ID";
-            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
-            this.courseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // timeslotIDDataGridViewTextBoxColumn
-            // 
-            this.timeslotIDDataGridViewTextBoxColumn.DataPropertyName = "time_slot_ID";
-            this.timeslotIDDataGridViewTextBoxColumn.HeaderText = "time_slot_ID";
-            this.timeslotIDDataGridViewTextBoxColumn.Name = "timeslotIDDataGridViewTextBoxColumn";
-            this.timeslotIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.spcourseSectionsbycourseIDBindingSource1.DataMember = "sp_course_Sections_by_course_ID";
+            this.spcourseSectionsbycourseIDBindingSource1.DataSource = this.classRegistryDataSet1;
             // 
             // capacityDataGridViewTextBoxColumn
             // 
@@ -293,49 +289,58 @@
             this.calendaryearDataGridViewTextBoxColumn.Name = "calendaryearDataGridViewTextBoxColumn";
             this.calendaryearDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // timeslotIDDataGridViewTextBoxColumn
+            // 
+            this.timeslotIDDataGridViewTextBoxColumn.DataPropertyName = "time_slot_ID";
+            this.timeslotIDDataGridViewTextBoxColumn.HeaderText = "time_slot_ID";
+            this.timeslotIDDataGridViewTextBoxColumn.Name = "timeslotIDDataGridViewTextBoxColumn";
+            this.timeslotIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 638);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView_CourseSections);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_addToCart);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Cart);
+            this.Controls.Add(this.dataGridView_Course);
             this.Name = "Form1";
             this.Text = "Class Registration";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).EndInit();
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView_Cart;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_addToCart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Course;
         private System.Windows.Forms.DataGridViewTextBoxColumn coursenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource spsearchbycoursenameBindingSource;
         private ClassRegistryDataSet1 classRegistryDataSet1;
@@ -343,17 +348,18 @@
         private System.Windows.Forms.ToolStrip fillToolStrip;
         private System.Windows.Forms.ToolStripLabel search_stringToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox search_stringToolStripTextBox;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView_CourseSections;
         private System.Windows.Forms.BindingSource classRegistryDataSet1BindingSource;
         private System.Windows.Forms.BindingSource courseSectionsBindingSource;
         private ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter course_SectionsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coursesectionIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeslotIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource spcourseSectionsbycourseIDBindingSource;
+        private ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter sp_course_Sections_by_course_IDTableAdapter;
+        private System.Windows.Forms.BindingSource spcourseSectionsbycourseIDBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currentlyenrolledDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn calendaryearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeslotIDDataGridViewTextBoxColumn;
     }
 }
 
