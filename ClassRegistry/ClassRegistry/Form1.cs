@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ClassRegistry.ClassRegistryDataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,5 +74,52 @@ namespace ClassRegistry
             int courseID = (int)row.Row.ItemArray[5];
         }
 
+        public int? loggedInStudentID = null;
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            int studentID;
+            if (int.TryParse(iDField.Text, out studentID))
+            {
+ 
+                var studentsTableAdapter = new Students1TableAdapter();
+                var studentExists = studentsTableAdapter.FindByStudentID(studentID);
+
+                if (studentExists != null && studentExists is DataTable dataTable && dataTable.Rows.Count > 0)
+                {
+                    loggedInStudentID = studentID;
+                    MessageBox.Show("You have successfully logged in!");
+                    loggedInLabel.Visible = true;
+                    loggedInLabel.Text = "Logged in as: " + studentID;
+                    logOut.Visible = true;
+                    loginButton.Visible = false;
+                    iDField.ReadOnly = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Student ID does not exist.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Student ID.");
+            }
+
+        }
+
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have successfully logged out!");
+            loggedInLabel.Visible = false;
+            logOut.Visible = false;
+            loginButton.Visible = true;
+            iDField.ReadOnly = false;
+            iDField.Clear();
+            loggedInStudentID = null;
+
+
+        }
     }
 }
