@@ -8,3 +8,14 @@ C:\Users\NekoNiiChan\Documents\GitHub\ClassRegistration\ClassRegistry\ClassRegis
 C:\Users\NekoNiiChan\Documents\GitHub\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.csproj.CoreCompileInputs.cache
 C:\Users\NekoNiiChan\Documents\GitHub\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.exe
 C:\Users\NekoNiiChan\Documents\GitHub\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.pdb
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\bin\Debug\ClassRegistry.exe.config
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\bin\Debug\ClassRegistry.exe
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\bin\Debug\ClassRegistry.pdb
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.csproj.AssemblyReference.cache
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.Form1.resources
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.Properties.Resources.resources
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.csproj.GenerateResource.cache
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.csproj.CoreCompileInputs.cache
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.exe
+C:\Users\Mlee.BIGGAR\ClassRegistration\ClassRegistry\ClassRegistry\obj\Debug\ClassRegistry.pdb

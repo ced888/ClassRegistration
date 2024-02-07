@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace ClassRegistry
 {  
     public partial class Form1 : Form
     {
+        string connectionString = Properties.Settings.Default.ClassRegistryConnectionString1;
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace ClassRegistry
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -64,12 +68,70 @@ namespace ClassRegistry
             this.sp_course_Sections_by_course_IDTableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID, x);
         }
 
+        
+
+
         private void btn_addToCart_Click(object sender, EventArgs e)
         {
             DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
             //Grabs the course_section id and course id integers
             int course_sectionID = (int)row.Row.ItemArray[6];
             int courseID = (int)row.Row.ItemArray[5];
+
+            if (int.TryParse(textBox1.Text, out int studentID))
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@studentId", studentID);
+                    sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+
+                    try
+                    {
+                        sqlCon.Open();
+                        sqlCmd.ExecuteNonQuery();
+                        Console.WriteLine("successful stored procedure call");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+                dataGridView_Cart_Bind();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Enter a valid studentID");
+            }
+
+        }
+
+        private void dataGridView_Cart_Bind()
+        {
+            try
+            {
+                using (SqlConnection sqlConnect = new SqlConnection(connectionString))
+                {
+                    sqlConnect.Open();
+                    int studentID = int.Parse(textBox1.Text);
+                    SqlCommand sqlCmd = new SqlCommand("sp_course_sections_by_cart", sqlConnect);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@student_ID", studentID);
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    dataGridView_Cart.DataSource = dataTable;
+                    
+
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
     }
