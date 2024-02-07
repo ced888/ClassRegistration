@@ -382,6 +382,7 @@
         private System.Windows.Forms.BindingSource spcourseSectionsbycourseIDBindingSource;
         private ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter sp_course_Sections_by_course_IDTableAdapter;
         private System.Windows.Forms.BindingSource spcourseSectionsbycourseIDBindingSource1;
+        private ClassRegistryDataSet1TableAdapters.CartTableAdapter cartTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currentlyenrolledDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn;

@@ -75,6 +75,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassRegistryDataSet.xsc">
+      <DependentUpon>ClassRegistryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClassRegistryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassRegistryDataSet.xss">
+      <DependentUpon>ClassRegistryDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ClassRegistryDataSet1.xsc">
       <DependentUpon>ClassRegistryDataSet1.xsd</DependentUpon>
     </None>
