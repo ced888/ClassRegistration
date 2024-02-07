@@ -53,12 +53,12 @@
             this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loggedInLabel = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
             this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
             this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
             this.sp_course_Sections_by_course_IDTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter();
             this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.loggedInLabel = new System.Windows.Forms.Label();
-            this.logOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
@@ -78,6 +78,7 @@
             this.dataGridView_Cart.Name = "dataGridView_Cart";
             this.dataGridView_Cart.Size = new System.Drawing.Size(775, 141);
             this.dataGridView_Cart.TabIndex = 1;
+            this.dataGridView_Cart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cart_CellContentClick);
             // 
             // iDField
             // 
@@ -109,6 +110,7 @@
             // 
             // btn_addToCart
             // 
+            this.btn_addToCart.Enabled = false;
             this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addToCart.Location = new System.Drawing.Point(688, 245);
             this.btn_addToCart.Name = "btn_addToCart";
@@ -283,6 +285,27 @@
             this.courseSectionsBindingSource.DataMember = "Course_Sections";
             this.courseSectionsBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
             // 
+            // loggedInLabel
+            // 
+            this.loggedInLabel.AutoSize = true;
+            this.loggedInLabel.Location = new System.Drawing.Point(304, 23);
+            this.loggedInLabel.Name = "loggedInLabel";
+            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
+            this.loggedInLabel.TabIndex = 13;
+            this.loggedInLabel.Text = "logged in label";
+            this.loggedInLabel.Visible = false;
+            // 
+            // logOut
+            // 
+            this.logOut.Location = new System.Drawing.Point(212, 18);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(75, 23);
+            this.logOut.TabIndex = 14;
+            this.logOut.Text = "Log Out";
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Visible = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // sp_search_by_course_nameTableAdapter
             // 
             this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
@@ -300,32 +323,11 @@
             this.spcourseSectionsbycourseIDBindingSource1.DataMember = "sp_course_Sections_by_course_ID";
             this.spcourseSectionsbycourseIDBindingSource1.DataSource = this.classRegistryDataSet1;
             // 
-            // loggedInLabel
-            // 
-            this.loggedInLabel.AutoSize = true;
-            this.loggedInLabel.Location = new System.Drawing.Point(304, 23);
-            this.loggedInLabel.Name = "loggedInLabel";
-            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
-            this.loggedInLabel.TabIndex = 13;
-            this.loggedInLabel.Text = "logged in label";
-            this.loggedInLabel.Visible = false;
-            // 
-            // logOut
-            // 
-            this.logOut.Location = new System.Drawing.Point(665, 13);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(75, 23);
-            this.logOut.TabIndex = 14;
-            this.logOut.Text = "Log Out";
-            this.logOut.UseVisualStyleBackColor = true;
-            this.logOut.Visible = false;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 638);
+            this.ClientSize = new System.Drawing.Size(806, 609);
             this.Controls.Add(this.logOut);
             this.Controls.Add(this.loggedInLabel);
             this.Controls.Add(this.dataGridView_CourseSections);

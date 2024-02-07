@@ -11,9 +11,12 @@ namespace ClassRegistry
     }
 }
 
-namespace ClassRegistry.ClassRegistryDataSet1TableAdapters {
-    
-    
+namespace ClassRegistry.ClassRegistryDataSet1TableAdapters
+{
+    partial class CartTableAdapter
+    {
+    }
+
     public partial class Students1TableAdapter {
     }
 }
