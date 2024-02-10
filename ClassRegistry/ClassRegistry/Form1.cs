@@ -15,6 +15,8 @@ namespace ClassRegistry
     public partial class Form1 : Form
     {
         string connectionString = Properties.Settings.Default.ClassRegistryConnectionString1;
+        //variable to store the logged in student's ID
+        public int? loggedInStudentID = null;
 
         public Form1()
         {
@@ -76,35 +78,31 @@ namespace ClassRegistry
             DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
             //Grabs the course_section id and course id integers
             int course_sectionID = (int)row.Row.ItemArray[6];
-            int courseID = (int)row.Row.ItemArray[5];
+            int timeSlotId = (int)row.Row.ItemArray[4];
+            
 
-            if (int.TryParse(textBox1.Text, out int studentID))
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
+                sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+                sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
+
+                
+                try
                 {
-                    SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@studentId", studentID);
-                    sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+                    sqlCon.Open();
+                    sqlCmd.ExecuteNonQuery();
 
-                    try
-                    {
-                        sqlCon.Open();
-                        sqlCmd.ExecuteNonQuery();
-                        Console.WriteLine("successful stored procedure call");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
-                    }
                 }
-                dataGridView_Cart_Bind();
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
             }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Enter a valid studentID");
-            }
+            dataGridView_Cart_Bind();
+          
 
         }
 
@@ -114,18 +112,15 @@ namespace ClassRegistry
             {
                 using (SqlConnection sqlConnect = new SqlConnection(connectionString))
                 {
+                    dataGridView_Cart.Refresh();
                     sqlConnect.Open();
-                    int studentID = int.Parse(textBox1.Text);
                     SqlCommand sqlCmd = new SqlCommand("sp_course_sections_by_cart", sqlConnect);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@student_ID", studentID);
+                    sqlCmd.Parameters.AddWithValue("@student_ID", loggedInStudentID);
                     SqlDataReader reader = sqlCmd.ExecuteReader();
                     DataTable dataTable = new DataTable();
                     dataTable.Load(reader);
                     dataGridView_Cart.DataSource = dataTable;
-                    
-
-
                 }
             }
             catch (System.Exception ex)
@@ -134,5 +129,62 @@ namespace ClassRegistry
             }
         }
 
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            int studentID;
+            if (int.TryParse(iDField.Text, out studentID))
+            {
+ 
+                var studentsTableAdapter = new Students1TableAdapter();
+                var studentResults = studentsTableAdapter.FindByStudentID(studentID);
+
+
+                if (studentResults != null && studentResults.Rows.Count > 0)
+                {
+                    loggedInStudentID = studentID;
+
+                    //Getting the Student's name, there's probably a better way
+                    var studentName = studentResults[0]["first_name"].ToString().Trim() + " "
+                        + studentResults[0]["last_name"].ToString().Trim();
+
+
+                    MessageBox.Show("You have successfully logged in!");
+                    loggedInLabel.Visible = true;
+                    loggedInLabel.Text = "Logged in as: " + studentID + " : " + studentName;
+                    logOut.Visible = true;
+                    loginButton.Visible = false;
+                    iDField.ReadOnly = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Student ID does not exist.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Student ID.");
+            }
+
+        }
+
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have successfully logged out!");
+            loggedInLabel.Visible = false;
+            logOut.Visible = false;
+            loginButton.Visible = true;
+            iDField.ReadOnly = false;
+            iDField.Clear();
+            loggedInStudentID = null;
+
+
+        }
+
+        private void iDField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

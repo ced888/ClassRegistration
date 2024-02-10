@@ -30,42 +30,44 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView_Cart = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.iDField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.btn_addToCart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_Course = new System.Windows.Forms.DataGridView();
+            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.search_stringToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.search_stringToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView_CourseSections = new System.Windows.Forms.DataGridView();
-            this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
-            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
-            this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
-            this.sp_course_Sections_by_course_IDTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter();
-            this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentlyenrolledDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendaryearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeslotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
+            this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
+            this.sp_course_Sections_by_course_IDTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter();
+            this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.loggedInLabel = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
             this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,13 +79,14 @@
             this.dataGridView_Cart.Size = new System.Drawing.Size(775, 141);
             this.dataGridView_Cart.TabIndex = 1;
             // 
-            // textBox1
+            // iDField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(106, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 2;
+            this.iDField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iDField.Location = new System.Drawing.Point(106, 18);
+            this.iDField.Name = "iDField";
+            this.iDField.Size = new System.Drawing.Size(100, 26);
+            this.iDField.TabIndex = 2;
+            this.iDField.TextChanged += new System.EventHandler(this.iDField_TextChanged);
             // 
             // label1
             // 
@@ -95,14 +98,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Student Id:";
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(212, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Log in";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(212, 18);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "Log in";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // btn_addToCart
             // 
@@ -165,10 +169,28 @@
             this.dataGridView_Course.TabIndex = 0;
             this.dataGridView_Course.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
+            // coursenameDataGridViewTextBoxColumn
+            // 
+            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
+            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spsearchbycoursenameBindingSource
+            // 
+            this.spsearchbycoursenameBindingSource.DataMember = "sp_search_by_course_name";
+            this.spsearchbycoursenameBindingSource.DataSource = this.classRegistryDataSet1;
+            // 
+            // classRegistryDataSet1
+            // 
+            this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
+            this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // fillToolStrip
             // 
             this.fillToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.fillToolStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.search_stringToolStripLabel,
             this.search_stringToolStripTextBox});
@@ -212,55 +234,6 @@
             this.dataGridView_CourseSections.Size = new System.Drawing.Size(603, 150);
             this.dataGridView_CourseSections.TabIndex = 12;
             // 
-            // spcourseSectionsbycourseIDBindingSource
-            // 
-            this.spcourseSectionsbycourseIDBindingSource.DataMember = "sp_course_Sections_by_course_ID";
-            this.spcourseSectionsbycourseIDBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
-            // 
-            // courseSectionsBindingSource
-            // 
-            this.courseSectionsBindingSource.DataMember = "Course_Sections";
-            this.courseSectionsBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
-            // 
-            // classRegistryDataSet1BindingSource
-            // 
-            this.classRegistryDataSet1BindingSource.DataSource = this.classRegistryDataSet1;
-            this.classRegistryDataSet1BindingSource.Position = 0;
-            // 
-            // classRegistryDataSet1
-            // 
-            this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
-            this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // coursenameDataGridViewTextBoxColumn
-            // 
-            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
-            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // spsearchbycoursenameBindingSource
-            // 
-            this.spsearchbycoursenameBindingSource.DataMember = "sp_search_by_course_name";
-            this.spsearchbycoursenameBindingSource.DataSource = this.classRegistryDataSet1;
-            // 
-            // sp_search_by_course_nameTableAdapter
-            // 
-            this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
-            // 
-            // course_SectionsTableAdapter
-            // 
-            this.course_SectionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // sp_course_Sections_by_course_IDTableAdapter
-            // 
-            this.sp_course_Sections_by_course_IDTableAdapter.ClearBeforeFill = true;
-            // 
-            // spcourseSectionsbycourseIDBindingSource1
-            // 
-            this.spcourseSectionsbycourseIDBindingSource1.DataMember = "sp_course_Sections_by_course_ID";
-            this.spcourseSectionsbycourseIDBindingSource1.DataSource = this.classRegistryDataSet1;
-            // 
             // capacityDataGridViewTextBoxColumn
             // 
             this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
@@ -296,6 +269,59 @@
             this.timeslotIDDataGridViewTextBoxColumn.Name = "timeslotIDDataGridViewTextBoxColumn";
             this.timeslotIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // spcourseSectionsbycourseIDBindingSource
+            // 
+            this.spcourseSectionsbycourseIDBindingSource.DataMember = "sp_course_Sections_by_course_ID";
+            this.spcourseSectionsbycourseIDBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
+            // 
+            // classRegistryDataSet1BindingSource
+            // 
+            this.classRegistryDataSet1BindingSource.DataSource = this.classRegistryDataSet1;
+            this.classRegistryDataSet1BindingSource.Position = 0;
+            // 
+            // courseSectionsBindingSource
+            // 
+            this.courseSectionsBindingSource.DataMember = "Course_Sections";
+            this.courseSectionsBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
+            // 
+            // sp_search_by_course_nameTableAdapter
+            // 
+            this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
+            // 
+            // course_SectionsTableAdapter
+            // 
+            this.course_SectionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_course_Sections_by_course_IDTableAdapter
+            // 
+            this.sp_course_Sections_by_course_IDTableAdapter.ClearBeforeFill = true;
+            // 
+            // spcourseSectionsbycourseIDBindingSource1
+            // 
+            this.spcourseSectionsbycourseIDBindingSource1.DataMember = "sp_course_Sections_by_course_ID";
+            this.spcourseSectionsbycourseIDBindingSource1.DataSource = this.classRegistryDataSet1;
+            // 
+            // loggedInLabel
+            // 
+            this.loggedInLabel.AutoSize = true;
+            this.loggedInLabel.Location = new System.Drawing.Point(304, 23);
+            this.loggedInLabel.Name = "loggedInLabel";
+            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
+            this.loggedInLabel.TabIndex = 13;
+            this.loggedInLabel.Text = "logged in label";
+            this.loggedInLabel.Visible = false;
+            // 
+            // logOut
+            // 
+            this.logOut.Location = new System.Drawing.Point(665, 13);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(75, 23);
+            this.logOut.TabIndex = 14;
+            this.logOut.Text = "Log Out";
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Visible = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,9 +333,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_addToCart);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
             this.Controls.Add(this.dataGridView_Course);
             this.Name = "Form1";
@@ -317,14 +343,14 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -333,9 +359,9 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView_Cart;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox iDField;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button btn_addToCart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
@@ -361,6 +387,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn calendaryearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeslotIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label loggedInLabel;
+        private System.Windows.Forms.Button logOut;
     }
 }
 
