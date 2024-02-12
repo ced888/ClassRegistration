@@ -59,6 +59,7 @@
             this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.loggedInLabel = new System.Windows.Forms.Label();
             this.logOut = new System.Windows.Forms.Button();
+            this.removeFromCartButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
@@ -73,18 +74,25 @@
             // 
             // dataGridView_Cart
             // 
+            this.dataGridView_Cart.AllowUserToAddRows = false;
+            this.dataGridView_Cart.AllowUserToDeleteRows = false;
+            this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Cart.Location = new System.Drawing.Point(12, 304);
+            this.dataGridView_Cart.Location = new System.Drawing.Point(18, 468);
+            this.dataGridView_Cart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_Cart.Name = "dataGridView_Cart";
-            this.dataGridView_Cart.Size = new System.Drawing.Size(775, 141);
+            this.dataGridView_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Cart.Size = new System.Drawing.Size(1162, 217);
             this.dataGridView_Cart.TabIndex = 1;
             // 
             // iDField
             // 
             this.iDField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDField.Location = new System.Drawing.Point(106, 18);
+            this.iDField.Location = new System.Drawing.Point(159, 28);
+            this.iDField.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iDField.Name = "iDField";
-            this.iDField.Size = new System.Drawing.Size(100, 26);
+            this.iDField.Size = new System.Drawing.Size(148, 26);
             this.iDField.TabIndex = 2;
             this.iDField.TextChanged += new System.EventHandler(this.iDField_TextChanged);
             // 
@@ -92,7 +100,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(18, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 3;
@@ -100,9 +109,10 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(212, 18);
+            this.loginButton.Location = new System.Drawing.Point(318, 28);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(112, 35);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Log in";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -110,11 +120,14 @@
             // 
             // btn_addToCart
             // 
+            this.btn_addToCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addToCart.Location = new System.Drawing.Point(688, 245);
+            this.btn_addToCart.Location = new System.Drawing.Point(1032, 377);
+            this.btn_addToCart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_addToCart.Name = "btn_addToCart";
-            this.btn_addToCart.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            this.btn_addToCart.Size = new System.Drawing.Size(99, 27);
+            this.btn_addToCart.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
+            this.btn_addToCart.Size = new System.Drawing.Size(148, 42);
             this.btn_addToCart.TabIndex = 7;
             this.btn_addToCart.Text = "Add To Cart";
             this.btn_addToCart.UseVisualStyleBackColor = true;
@@ -124,7 +137,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 281);
+            this.label3.Location = new System.Drawing.Point(18, 432);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 8;
@@ -133,10 +147,11 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(655, 451);
+            this.button3.Location = new System.Drawing.Point(982, 694);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            this.button3.Size = new System.Drawing.Size(133, 28);
+            this.button3.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
+            this.button3.Size = new System.Drawing.Size(200, 43);
             this.button3.TabIndex = 9;
             this.button3.Text = "Enroll to Classes";
             this.button3.UseVisualStyleBackColor = true;
@@ -145,7 +160,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 486);
+            this.label4.Location = new System.Drawing.Point(18, 748);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 20);
             this.label4.TabIndex = 10;
@@ -161,11 +177,12 @@
             this.dataGridView_Course.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coursenameDataGridViewTextBoxColumn});
             this.dataGridView_Course.DataSource = this.spsearchbycoursenameBindingSource;
-            this.dataGridView_Course.Location = new System.Drawing.Point(9, 86);
+            this.dataGridView_Course.Location = new System.Drawing.Point(14, 132);
+            this.dataGridView_Course.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_Course.Name = "dataGridView_Course";
             this.dataGridView_Course.ReadOnly = true;
             this.dataGridView_Course.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Course.Size = new System.Drawing.Size(169, 150);
+            this.dataGridView_Course.Size = new System.Drawing.Size(254, 231);
             this.dataGridView_Course.TabIndex = 0;
             this.dataGridView_Course.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -194,9 +211,10 @@
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.search_stringToolStripLabel,
             this.search_stringToolStripTextBox});
-            this.fillToolStrip.Location = new System.Drawing.Point(9, 58);
+            this.fillToolStrip.Location = new System.Drawing.Point(14, 89);
             this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(227, 25);
+            this.fillToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.fillToolStrip.Size = new System.Drawing.Size(276, 25);
             this.fillToolStrip.TabIndex = 11;
             this.fillToolStrip.Text = "fillToolStrip";
             // 
@@ -211,13 +229,15 @@
             // 
             this.search_stringToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.search_stringToolStripTextBox.Name = "search_stringToolStripTextBox";
-            this.search_stringToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.search_stringToolStripTextBox.Size = new System.Drawing.Size(148, 25);
             this.search_stringToolStripTextBox.TextChanged += new System.EventHandler(this.search_stringToolStripTextBox_TextChanged);
             // 
             // dataGridView_CourseSections
             // 
             this.dataGridView_CourseSections.AllowUserToAddRows = false;
             this.dataGridView_CourseSections.AllowUserToDeleteRows = false;
+            this.dataGridView_CourseSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_CourseSections.AutoGenerateColumns = false;
             this.dataGridView_CourseSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CourseSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -227,11 +247,12 @@
             this.calendaryearDataGridViewTextBoxColumn,
             this.timeslotIDDataGridViewTextBoxColumn});
             this.dataGridView_CourseSections.DataSource = this.spcourseSectionsbycourseIDBindingSource;
-            this.dataGridView_CourseSections.Location = new System.Drawing.Point(184, 86);
+            this.dataGridView_CourseSections.Location = new System.Drawing.Point(276, 132);
+            this.dataGridView_CourseSections.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_CourseSections.Name = "dataGridView_CourseSections";
             this.dataGridView_CourseSections.ReadOnly = true;
             this.dataGridView_CourseSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_CourseSections.Size = new System.Drawing.Size(603, 150);
+            this.dataGridView_CourseSections.Size = new System.Drawing.Size(904, 231);
             this.dataGridView_CourseSections.TabIndex = 12;
             // 
             // capacityDataGridViewTextBoxColumn
@@ -322,11 +343,27 @@
             this.logOut.Visible = false;
             this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
+            // removeFromCartButton
+            // 
+            this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeFromCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeFromCartButton.Location = new System.Drawing.Point(1032, 421);
+            this.removeFromCartButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.removeFromCartButton.Name = "removeFromCartButton";
+            this.removeFromCartButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
+            this.removeFromCartButton.Size = new System.Drawing.Size(148, 42);
+            this.removeFromCartButton.TabIndex = 13;
+            this.removeFromCartButton.Text = "Remove from Cart";
+            this.removeFromCartButton.UseVisualStyleBackColor = true;
+            this.removeFromCartButton.Click += new System.EventHandler(this.removeFromCartButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 638);
+            this.ClientSize = new System.Drawing.Size(1212, 982);
+            this.Controls.Add(this.removeFromCartButton);
             this.Controls.Add(this.dataGridView_CourseSections);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.label4);
@@ -338,6 +375,7 @@
             this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
             this.Controls.Add(this.dataGridView_Course);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Class Registration";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -389,6 +427,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn timeslotIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Button logOut;
+        private System.Windows.Forms.Button removeFromCartButton;
     }
 }
 
