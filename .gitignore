@@ -8,3 +8,6 @@ __pycache__
 /ClassRegistry/ClassRegistry/obj/Debug/DesignTimeResolveAssemblyReferences.cache
 /ClassRegistry/ClassRegistry/obj/Release/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
 /ClassRegistry/ClassRegistry/obj/Release/ClassRegistry.csproj.AssemblyReference.cache
+
+bin
+obj

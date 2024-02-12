@@ -6,13 +6,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace ClassRegistry
-{  
+{
     public partial class Form1 : Form
     {
         string connectionString = Properties.Settings.Default.ClassRegistryConnectionString1;
@@ -33,7 +34,7 @@ namespace ClassRegistry
             try
             {
                 this.sp_search_by_course_nameTableAdapter.Fill(this.classRegistryDataSet1.sp_search_by_course_name, search_stringToolStripTextBox.Text);
-                
+
             }
             catch (System.Exception ex)
             {
@@ -71,12 +72,12 @@ namespace ClassRegistry
             //Grab the data row selected from the grid
             DataRowView row = (DataRowView)dataGridView_Course.SelectedRows[0].DataBoundItem;
             //Grabs the course_id int
-            int x = (int) row.Row.ItemArray[1];
+            int x = (int)row.Row.ItemArray[1];
             //Fills the course section data grid with current selected course
             this.sp_course_Sections_by_course_IDTableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID, x);
         }
 
-        
+
 
 
         private void btn_addToCart_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace ClassRegistry
             int course_sectionID = (int)row.Row.ItemArray[6];
             int timeSlotId = (int)row.Row.ItemArray[4];
 
-    
+
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
@@ -94,11 +95,11 @@ namespace ClassRegistry
                 sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
                 sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
                 sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
-               
-                
+
+
                 try
                 {
-                    if(buttonClickCounter < 5)
+                    if (buttonClickCounter < 5)
                     {
                         sqlCon.Open();
                         sqlCmd.ExecuteNonQuery();
@@ -115,7 +116,7 @@ namespace ClassRegistry
                 }
             }
             dataGridView_Cart_Bind();
-          
+
 
         }
 
@@ -142,12 +143,12 @@ namespace ClassRegistry
             }
         }
 
-       private void loginButton_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             int studentID;
             if (int.TryParse(iDField.Text, out studentID))
             {
- 
+
                 var studentsTableAdapter = new Students1TableAdapter();
                 var studentResults = studentsTableAdapter.FindByStudentID(studentID);
 
@@ -219,13 +220,13 @@ namespace ClassRegistry
                 try
                 {
 
-                        sqlCon.Open();
-                        sqlCmd.ExecuteNonQuery();
-                        dataGridView_Cart_Bind();
-                        if(buttonClickCounter > 0)
-                        {
-                            buttonClickCounter -= 1;
-                        }
+                    sqlCon.Open();
+                    sqlCmd.ExecuteNonQuery();
+                    dataGridView_Cart_Bind();
+                    if (buttonClickCounter > 0)
+                    {
+                        buttonClickCounter -= 1;
+                    }
 
 
                 }
