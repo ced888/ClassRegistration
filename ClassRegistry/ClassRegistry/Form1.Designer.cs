@@ -120,8 +120,8 @@
             // 
             // btn_addToCart
             // 
-            this.btn_addToCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addToCart.Enabled = false;
             this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addToCart.Location = new System.Drawing.Point(1032, 377);
             this.btn_addToCart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -345,8 +345,8 @@
             // 
             // removeFromCartButton
             // 
-            this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeFromCartButton.Enabled = false;
             this.removeFromCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeFromCartButton.Location = new System.Drawing.Point(1032, 421);
             this.removeFromCartButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -376,6 +376,7 @@
             this.Controls.Add(this.dataGridView_Cart);
             this.Controls.Add(this.dataGridView_Course);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1228, 1021);
             this.Name = "Form1";
             this.Text = "Class Registration";
             this.Load += new System.EventHandler(this.Form1_Load);

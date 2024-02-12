@@ -18,7 +18,7 @@ namespace ClassRegistry
         string connectionString = Properties.Settings.Default.ClassRegistryConnectionString1;
         //variable to store the logged in student's ID
         public int? loggedInStudentID = null;
-        public int? buttonClickCounter = 0;
+        public int? cartCounter = 0;
 
 
         public Form1()
@@ -94,15 +94,29 @@ namespace ClassRegistry
                 sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
                 sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
                 sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
-               
-                
+
+                SqlCommand sqlCmdCartCount = new SqlCommand("sp_get_course_count_from_cart", sqlCon);
+                sqlCmdCartCount.CommandType = CommandType.StoredProcedure;
+                sqlCmdCartCount.Parameters.AddWithValue("@studentId", loggedInStudentID);
+
                 try
                 {
-                    if(buttonClickCounter < 5)
+                    sqlCon.Open();
+                    sqlCmdCartCount.ExecuteNonQuery();
+                    cartCounter = (int)sqlCmdCartCount.ExecuteScalar();
+                    sqlCon.Close();
+                }
+                catch (Exception exc)
+                {
+                    System.Windows.Forms.MessageBox.Show(exc.Message);
+                }
+                try
+                {
+
+                    if (cartCounter < 5)
                     {
                         sqlCon.Open();
                         sqlCmd.ExecuteNonQuery();
-                        buttonClickCounter += 1;
                     }
                     else
                     {
@@ -167,6 +181,8 @@ namespace ClassRegistry
                     logOut.Visible = true;
                     loginButton.Visible = false;
                     iDField.ReadOnly = true;
+                    btn_addToCart.Enabled = true;
+                    removeFromCartButton.Enabled = true;
                     dataGridView_Cart_Bind();
 
                 }
@@ -222,10 +238,7 @@ namespace ClassRegistry
                         sqlCon.Open();
                         sqlCmd.ExecuteNonQuery();
                         dataGridView_Cart_Bind();
-                        if(buttonClickCounter > 0)
-                        {
-                            buttonClickCounter -= 1;
-                        }
+
 
 
                 }
