@@ -138,23 +138,95 @@ namespace ClassRegistry
                 sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
                 sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
 
+                SqlCommand sqlCmdGetCourseCount = new SqlCommand("sp_get_course_count_from_cart", sqlCon);
+                sqlCmdGetCourseCount.CommandType = CommandType.StoredProcedure;
+                sqlCmdGetCourseCount.Parameters.AddWithValue("@studentId", loggedInStudentID);
+
                 try
                 {
-                    if (cartCounter < 5)
-                    {
-                        sqlCon.Open();
-                        sqlCmd.ExecuteNonQuery();
-                        cartCounter += 1;
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Error: Course limit of 5 reached");
-                    }
+                    sqlCon.Open();
+                    sqlCmdGetCourseCount.ExecuteNonQuery();
+                    cartCounter = (int)sqlCmdGetCourseCount.ExecuteScalar();
+                    sqlCon.Close();
                 }
                 catch (Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+
+                SqlCommand sqlCmdCheckPreReq = new SqlCommand("spTest", sqlCon);
+                sqlCmdCheckPreReq.CommandType = CommandType.StoredProcedure;
+                sqlCmdCheckPreReq.Parameters.AddWithValue("@Student1", loggedInStudentID);
+                sqlCmdCheckPreReq.Parameters.AddWithValue("@courseSecId", course_sectionID);
+                List<int> prereqsNotTaken = new List<int>();
+
+                try
+                {
+                    sqlCon.Open();
+                    using (SqlDataReader reader = sqlCmdCheckPreReq.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                int prereqId = reader.GetInt32(reader.GetOrdinal("PreReqsNotTaken"));
+                                prereqsNotTaken.Add(prereqId);
+                            }
+                        }
+                    }
+                    sqlCon.Close();
+                }
+                catch (Exception exc)
+                {
+                    System.Windows.Forms.MessageBox.Show(exc.Message);
+                }
+
+                if (prereqsNotTaken.Count == 0)
+                {
+                    try
+                    {
+
+                        if (cartCounter < 5)
+                        {
+                            sqlCon.Open();
+                            sqlCmd.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Error: Course limit of 5 reached");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+
+                    SqlCommand sqlCmdGetCourseName = new SqlCommand("sp_get_course_name", sqlCon);
+                    sqlCmdGetCourseName.CommandType = CommandType.StoredProcedure;
+                    string prereqString = "";
+                    foreach (int prereq in prereqsNotTaken)
+                    {
+                        string courseName;
+                        sqlCmdGetCourseName.Parameters.AddWithValue("@courseId", prereq);
+                        try
+                        {
+                            sqlCon.Open();
+                            courseName = sqlCmdGetCourseName.ExecuteScalar().ToString().TrimEnd();
+                            prereqString += courseName + ", ";
+                        }
+                        catch(Exception exc)
+                        {
+                            System.Windows.Forms.MessageBox.Show(exc.Message);
+                        }
+                        
+                        
+                    }
+                    System.Windows.Forms.MessageBox.Show("The follow prereqs are required: " + prereqString);
+                }
+                
             }
             dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
 
@@ -162,14 +234,42 @@ namespace ClassRegistry
 
         private void removeFromCartButton_Click(object sender, EventArgs e)
         {
-            //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
-            //Grabs the course_section id and course id integers
-            DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
-            int course_sectionID = (int)row.Row.ItemArray[0];
+            try
+            {
+                //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
+                //Grabs the course_section id and course id integers
+                DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
+                int course_sectionID = (int)row.Row.ItemArray[0];
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    SqlCommand sqlCmd = new SqlCommand("sp_remove_course_from_cart", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
+                    sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
 
-            RemovefromDataGrid(dataGridView_Cart, "sp_remove_course_from_cart", course_sectionID, cartCounter);
+                    try
+                    {
 
-            dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
+                        sqlCon.Open();
+                        sqlCmd.ExecuteNonQuery();
+                        dataGridView_Cart_Bind();
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+                dataGridView_Cart_Bind();
+
+            }
+            catch (Exception exc)
+            {
+                System.Windows.Forms.MessageBox.Show("Cart is empty");
+            }
+
         }
 
         private void btn_enroll_Click(object sender, EventArgs e)
@@ -189,6 +289,9 @@ namespace ClassRegistry
                 sqlCmdRemove.CommandType = CommandType.StoredProcedure;
                 sqlCmdRemove.Parameters.AddWithValue("@studentId", loggedInStudentID);
                 sqlCmdRemove.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+
+  
+
 
                 try
                 {
@@ -284,6 +387,28 @@ namespace ClassRegistry
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+            }
+        }
+        private void dataGridView_Cart_Bind()
+        {
+            try
+            {
+                using (SqlConnection sqlConnect = new SqlConnection(connectionString))
+                {
+                    dataGridView_Cart.Refresh();
+                    sqlConnect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("sp_course_sections_by_cart", sqlConnect);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@student_ID", loggedInStudentID);
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    dataGridView_Cart.DataSource = dataTable;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
 
