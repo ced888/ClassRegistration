@@ -128,6 +128,9 @@ namespace ClassRegistry
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+
+
+
             }
             dataGridView_Cart_Bind();
 
@@ -220,21 +223,21 @@ namespace ClassRegistry
 
         private void removeFromCartButton_Click(object sender, EventArgs e)
         {
-            //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
-            //Grabs the course_section id and course id integers
-            DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
-            int course_sectionID = (int)row.Row.ItemArray[0];
-
-
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand sqlCmd = new SqlCommand("sp_remove_course_from_cart", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
-                sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
-
-                try
+                //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
+                //Grabs the course_section id and course id integers
+                DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
+                int course_sectionID = (int)row.Row.ItemArray[0];
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
+                    SqlCommand sqlCmd = new SqlCommand("sp_remove_course_from_cart", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
+                    sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+
+                    try
+                    {
 
                         sqlCon.Open();
                         sqlCmd.ExecuteNonQuery();
@@ -242,13 +245,21 @@ namespace ClassRegistry
 
 
 
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
+                dataGridView_Cart_Bind();
+
             }
-            dataGridView_Cart_Bind();
+            catch(Exception exc)
+            {
+                System.Windows.Forms.MessageBox.Show("Cart is empty");
+            }
+
+           
 
         }
     }

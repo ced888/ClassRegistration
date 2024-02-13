@@ -76,17 +76,17 @@
             // 
             this.dataGridView_Cart.AllowUserToAddRows = false;
             this.dataGridView_Cart.AllowUserToDeleteRows = false;
-            this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Cart.Location = new System.Drawing.Point(18, 468);
             this.dataGridView_Cart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_Cart.Name = "dataGridView_Cart";
+            this.dataGridView_Cart.ReadOnly = true;
             this.dataGridView_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Cart.Size = new System.Drawing.Size(1162, 217);
             this.dataGridView_Cart.TabIndex = 1;
             // 
-            // iDField
             // iDField
             // 
             this.iDField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +108,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Student Id:";
             // 
-            // loginButton
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(318, 28);
@@ -205,28 +204,10 @@
             this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
             this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // coursenameDataGridViewTextBoxColumn
-            // 
-            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
-            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
-            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // spsearchbycoursenameBindingSource
-            // 
-            this.spsearchbycoursenameBindingSource.DataMember = "sp_search_by_course_name";
-            this.spsearchbycoursenameBindingSource.DataSource = this.classRegistryDataSet1;
-            // 
-            // classRegistryDataSet1
-            // 
-            this.classRegistryDataSet1.DataSetName = "ClassRegistryDataSet1";
-            this.classRegistryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fillToolStrip
             // 
             this.fillToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.fillToolStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.search_stringToolStripLabel,
@@ -256,7 +237,7 @@
             // 
             this.dataGridView_CourseSections.AllowUserToAddRows = false;
             this.dataGridView_CourseSections.AllowUserToDeleteRows = false;
-            this.dataGridView_CourseSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView_CourseSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_CourseSections.AutoGenerateColumns = false;
             this.dataGridView_CourseSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -391,9 +372,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_addToCart);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.iDField);
             this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
             this.Controls.Add(this.dataGridView_Course);
@@ -406,14 +385,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).EndInit();
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).EndInit();
             this.ResumeLayout(false);
