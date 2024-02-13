@@ -165,10 +165,16 @@ namespace ClassRegistry
                     MessageBox.Show("You have successfully logged in!");
                     loggedInLabel.Visible = true;
                     loggedInLabel.Text = "Logged in as: " + studentID + " : " + studentName;
-                    logOut.Visible = true;
-                    loginButton.Visible = false;
                     iDField.ReadOnly = true;
                     dataGridView_Cart_Bind();
+
+                    //Hidden Items
+                    loginButton.Visible = false;
+                    
+                    //Visible Items
+                    logOut.Visible = true;
+                    btn_addToCart.Visible = true;
+                    removeFromCartButton.Visible = true;
 
                 }
                 else
@@ -188,11 +194,20 @@ namespace ClassRegistry
         {
             MessageBox.Show("You have successfully logged out!");
             loggedInLabel.Visible = false;
-            logOut.Visible = false;
-            loginButton.Visible = true;
+            
+            
             iDField.ReadOnly = false;
             iDField.Clear();
             loggedInStudentID = null;
+
+            //Visible Items
+            loginButton.Visible = true;
+
+            //Hidden Items
+            logOut.Visible = false;
+            btn_addToCart.Visible = false;
+            removeFromCartButton.Visible = false;
+            logOut.Visible = false;
 
 
         }
