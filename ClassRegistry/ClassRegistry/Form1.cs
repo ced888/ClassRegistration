@@ -163,12 +163,17 @@ namespace ClassRegistry
 
 
                     MessageBox.Show("You have successfully logged in!");
-                    loggedInLabel.Visible = true;
-                    loggedInLabel.Text = "Logged in as: " + studentID + " : " + studentName;
-                    logOut.Visible = true;
+                    loggedInLabel2.Text = "Logged in as: " + studentID + " : " + studentName;
                     loginButton.Visible = false;
                     iDField.ReadOnly = true;
                     dataGridView_Cart_Bind();
+                    //items being made visible with click of login button
+                    dataGridView_Cart.Visible = true;
+                    logOut2.Visible = true;
+                    loggedInLabel2.Visible = true;
+                    removeFromCartButton.Visible = true;
+                    btn_addToCart.Visible = true;
+
 
                 }
                 else
@@ -184,18 +189,13 @@ namespace ClassRegistry
         }
 
 
+        // I don't know how to get rid of this
         private void logOut_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You have successfully logged out!");
-            loggedInLabel.Visible = false;
-            logOut.Visible = false;
-            loginButton.Visible = true;
-            iDField.ReadOnly = false;
-            iDField.Clear();
-            loggedInStudentID = null;
 
 
         }
+
 
         private void iDField_TextChanged(object sender, EventArgs e)
         {
@@ -236,6 +236,38 @@ namespace ClassRegistry
                 }
             }
             dataGridView_Cart_Bind();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOut2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have successfully logged out!");
+            loginButton.Visible = true;
+            iDField.ReadOnly = false;
+            iDField.Clear();
+            loggedInStudentID = null;
+            //items being made invisible with click of logout button
+            loggedInLabel2.Visible = false;
+            logOut2.Visible = false;
+            dataGridView_Cart.Visible = false;
+            removeFromCartButton.Visible = false;
+            btn_addToCart.Visible = false;
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -60,6 +60,8 @@
             this.loggedInLabel = new System.Windows.Forms.Label();
             this.logOut = new System.Windows.Forms.Button();
             this.removeFromCartButton = new System.Windows.Forms.Button();
+            this.logOut2 = new System.Windows.Forms.Button();
+            this.loggedInLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
@@ -84,6 +86,7 @@
             this.dataGridView_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Cart.Size = new System.Drawing.Size(775, 141);
             this.dataGridView_Cart.TabIndex = 1;
+            this.dataGridView_Cart.Visible = false;
             // 
             // iDField
             // 
@@ -106,7 +109,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(212, 18);
+            this.loginButton.Location = new System.Drawing.Point(222, 21);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 4;
@@ -126,6 +129,7 @@
             this.btn_addToCart.TabIndex = 7;
             this.btn_addToCart.Text = "Add To Cart";
             this.btn_addToCart.UseVisualStyleBackColor = true;
+            this.btn_addToCart.Visible = false;
             this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
             // 
             // label3
@@ -148,6 +152,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Enroll to Classes";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -344,13 +349,36 @@
             this.removeFromCartButton.TabIndex = 13;
             this.removeFromCartButton.Text = "Remove from Cart";
             this.removeFromCartButton.UseVisualStyleBackColor = true;
+            this.removeFromCartButton.Visible = false;
             this.removeFromCartButton.Click += new System.EventHandler(this.removeFromCartButton_Click);
+            // 
+            // logOut2
+            // 
+            this.logOut2.Location = new System.Drawing.Point(222, 18);
+            this.logOut2.Name = "logOut2";
+            this.logOut2.Size = new System.Drawing.Size(75, 23);
+            this.logOut2.TabIndex = 14;
+            this.logOut2.Text = "Log Out";
+            this.logOut2.UseVisualStyleBackColor = true;
+            this.logOut2.Visible = false;
+            this.logOut2.Click += new System.EventHandler(this.logOut2_Click);
+            // 
+            // loggedInLabel2
+            // 
+            this.loggedInLabel2.AutoSize = true;
+            this.loggedInLabel2.Location = new System.Drawing.Point(316, 26);
+            this.loggedInLabel2.Name = "loggedInLabel2";
+            this.loggedInLabel2.Size = new System.Drawing.Size(0, 13);
+            this.loggedInLabel2.TabIndex = 15;
+            this.loggedInLabel2.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 638);
+            this.Controls.Add(this.loggedInLabel2);
+            this.Controls.Add(this.logOut2);
             this.Controls.Add(this.removeFromCartButton);
             this.Controls.Add(this.dataGridView_CourseSections);
             this.Controls.Add(this.fillToolStrip);
@@ -415,6 +443,8 @@
         private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Button logOut;
         private System.Windows.Forms.Button removeFromCartButton;
+        private System.Windows.Forms.Button logOut2;
+        private System.Windows.Forms.Label loggedInLabel2;
     }
 }
 
