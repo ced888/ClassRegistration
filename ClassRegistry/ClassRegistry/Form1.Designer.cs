@@ -108,7 +108,6 @@
             this.iDField.Name = "iDField";
             this.iDField.Size = new System.Drawing.Size(100, 26);
             this.iDField.TabIndex = 2;
-            this.iDField.TextChanged += new System.EventHandler(this.iDField_TextChanged);
             // 
             // label1
             // 
@@ -231,7 +230,6 @@
             this.search_stringToolStripLabel.Name = "search_stringToolStripLabel";
             this.search_stringToolStripLabel.Size = new System.Drawing.Size(113, 22);
             this.search_stringToolStripLabel.Text = "Course Search:";
-            this.search_stringToolStripLabel.Click += new System.EventHandler(this.search_stringToolStripLabel_Click);
             // 
             // search_stringToolStripTextBox
             // 
@@ -389,62 +387,69 @@
             this.dataGridView_Enrolled.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Enrolled.Size = new System.Drawing.Size(778, 139);
             this.dataGridView_Enrolled.TabIndex = 14;
-            this.dataGridView_Enrolled.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            this.dataGridView_Enrolled.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
             // coursesectionIDDataGridViewTextBoxColumn
             // 
             this.coursesectionIDDataGridViewTextBoxColumn.DataPropertyName = "course_section_ID";
             this.coursesectionIDDataGridViewTextBoxColumn.HeaderText = "course_section_ID";
             this.coursesectionIDDataGridViewTextBoxColumn.Name = "coursesectionIDDataGridViewTextBoxColumn";
+            this.coursesectionIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // coursenameDataGridViewTextBoxColumn1
             // 
             this.coursenameDataGridViewTextBoxColumn1.DataPropertyName = "course_name";
             this.coursenameDataGridViewTextBoxColumn1.HeaderText = "course_name";
             this.coursenameDataGridViewTextBoxColumn1.Name = "coursenameDataGridViewTextBoxColumn1";
+            this.coursenameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // semesterDataGridViewTextBoxColumn1
             // 
             this.semesterDataGridViewTextBoxColumn1.DataPropertyName = "semester";
             this.semesterDataGridViewTextBoxColumn1.HeaderText = "semester";
             this.semesterDataGridViewTextBoxColumn1.Name = "semesterDataGridViewTextBoxColumn1";
+            this.semesterDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // calendaryearDataGridViewTextBoxColumn1
             // 
             this.calendaryearDataGridViewTextBoxColumn1.DataPropertyName = "calendar_year";
             this.calendaryearDataGridViewTextBoxColumn1.HeaderText = "calendar_year";
             this.calendaryearDataGridViewTextBoxColumn1.Name = "calendaryearDataGridViewTextBoxColumn1";
+            this.calendaryearDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // capacityDataGridViewTextBoxColumn1
             // 
             this.capacityDataGridViewTextBoxColumn1.DataPropertyName = "capacity";
             this.capacityDataGridViewTextBoxColumn1.HeaderText = "capacity";
             this.capacityDataGridViewTextBoxColumn1.Name = "capacityDataGridViewTextBoxColumn1";
+            this.capacityDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // currentlyenrolledDataGridViewTextBoxColumn1
             // 
             this.currentlyenrolledDataGridViewTextBoxColumn1.DataPropertyName = "currently_enrolled";
             this.currentlyenrolledDataGridViewTextBoxColumn1.HeaderText = "currently_enrolled";
             this.currentlyenrolledDataGridViewTextBoxColumn1.Name = "currentlyenrolledDataGridViewTextBoxColumn1";
+            this.currentlyenrolledDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // scheduledayDataGridViewTextBoxColumn
             // 
             this.scheduledayDataGridViewTextBoxColumn.DataPropertyName = "schedule_day";
             this.scheduledayDataGridViewTextBoxColumn.HeaderText = "schedule_day";
             this.scheduledayDataGridViewTextBoxColumn.Name = "scheduledayDataGridViewTextBoxColumn";
+            this.scheduledayDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // starttimeDataGridViewTextBoxColumn
             // 
             this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "start_time";
             this.starttimeDataGridViewTextBoxColumn.HeaderText = "start_time";
             this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
+            this.starttimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // endtimeDataGridViewTextBoxColumn
             // 
             this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "end_time";
             this.endtimeDataGridViewTextBoxColumn.HeaderText = "end_time";
             this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
+            this.endtimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // spgetenrolledBindingSource
             // 

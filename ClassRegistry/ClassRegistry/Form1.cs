@@ -19,8 +19,8 @@ namespace ClassRegistry
         string connectionString = Properties.Settings.Default.ClassRegistryConnectionString1;
         //variable to store the logged in student's ID
         public int? loggedInStudentID = null;
-        public int? buttonClickCounter = 0;
-
+        public int cartCounter = 0;
+        public int scheduleCounter = 0;
 
         public Form1()
         {
@@ -42,115 +42,13 @@ namespace ClassRegistry
 
         }
 
-        private void search_stringToolStripLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void search_stringToolStripTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.sp_search_by_course_nameTableAdapter.Fill(this.classRegistryDataSet1.sp_search_by_course_name, search_stringToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
-
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            if(dataGridView_Course.Rows.Count > 0)
-            {
-                //Grab the data row selected from the grid
-                DataRowView row = (DataRowView)dataGridView_Course.SelectedRows[0].DataBoundItem;
-                //Grabs the course_id int
-                int x = (int)row.Row.ItemArray[1];
-                //Fills the course section data grid with current selected course
-                this.sp_course_Sections_by_course_IDTableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID, x);
-            }            
-        }
-
-        private void btn_addToCart_Click(object sender, EventArgs e)
-        {
-            DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
-            //Grabs the course_section id and course id integers
-            int course_sectionID = (int)row.Row.ItemArray[6];
-            int timeSlotId = (int)row.Row.ItemArray[4];
-
-
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
-                sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
-                sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
-
-
-                try
-                {
-                    if (buttonClickCounter < 5)
-                    {
-                        sqlCon.Open();
-                        sqlCmd.ExecuteNonQuery();
-                        buttonClickCounter += 1;
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Error: Course limit of 5 reached");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
-            }
-            dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
-
-        }
-
-        /// <summary>
-        /// Helper function to bind course data to data grids
-        /// </summary>
-        /// <param name="datagrid">Data Grid View to update</param>
-        /// <param name="spName">Stored procedure of get function</param>
-        private void dataGridView_CourseData_Bind(DataGridView datagrid, string spName)
-        {
-            try
-            {
-                using (SqlConnection sqlConnect = new SqlConnection(connectionString))
-                {
-                    datagrid.Refresh();
-                    sqlConnect.Open();
-                    SqlCommand sqlCmd = new SqlCommand(spName, sqlConnect);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@student_ID", loggedInStudentID);
-                    SqlDataReader reader = sqlCmd.ExecuteReader();
-                    DataTable dataTable = new DataTable();
-                    dataTable.Load(reader);
-                    datagrid.DataSource = dataTable;
-                }
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             int studentID;
             if (int.TryParse(iDField.Text, out studentID))
             {
-
                 var studentsTableAdapter = new Students1TableAdapter();
                 var studentResults = studentsTableAdapter.FindByStudentID(studentID);
-
 
                 if (studentResults != null && studentResults.Rows.Count > 0)
                 {
@@ -183,7 +81,6 @@ namespace ClassRegistry
 
         }
 
-
         private void logOut_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You have successfully logged out!");
@@ -193,42 +90,66 @@ namespace ClassRegistry
             iDField.ReadOnly = false;
             iDField.Clear();
             loggedInStudentID = null;
-
-
         }
 
-        private void iDField_TextChanged(object sender, EventArgs e)
+        private void search_stringToolStripTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.sp_search_by_course_nameTableAdapter.Fill(this.classRegistryDataSet1.sp_search_by_course_name, search_stringToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
-        private void removeFromCartButton_Click(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
+            refreshCourseSections();
+        }
+
+        private void refreshCourseSections()
+        {
+            if (dataGridView_Course.Rows.Count > 0)
+            {
+                //Grab the data row selected from the grid
+                DataRowView row = (DataRowView)dataGridView_Course.SelectedRows[0].DataBoundItem;
+                //Grabs the course_id int
+                int x = (int)row.Row.ItemArray[1];
+                //Fills the course section data grid with current selected course
+                this.sp_course_Sections_by_course_IDTableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID, x);
+            }
+        }
+
+        private void btn_addToCart_Click(object sender, EventArgs e)
+        {
+            DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
             //Grabs the course_section id and course id integers
-            DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
-            int course_sectionID = (int)row.Row.ItemArray[0];
+            int course_sectionID = (int)row.Row.ItemArray[6];
+            int timeSlotId = (int)row.Row.ItemArray[4];
 
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                SqlCommand sqlCmd = new SqlCommand("sp_remove_course_from_cart", sqlCon);
+                SqlCommand sqlCmd = new SqlCommand("sp_add_to_cart", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
+                sqlCmd.Parameters.AddWithValue("@timeSlotId", timeSlotId);
                 sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
 
                 try
                 {
-
-                    sqlCon.Open();
-                    sqlCmd.ExecuteNonQuery();
-                    dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
-                    if (buttonClickCounter > 0)
+                    if (cartCounter < 5)
                     {
-                        buttonClickCounter -= 1;
+                        sqlCon.Open();
+                        sqlCmd.ExecuteNonQuery();
+                        cartCounter += 1;
                     }
-
-
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Error: Course limit of 5 reached");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -239,20 +160,16 @@ namespace ClassRegistry
 
         }
 
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void removeFromCartButton_Click(object sender, EventArgs e)
         {
+            //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
+            //Grabs the course_section id and course id integers
+            DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
+            int course_sectionID = (int)row.Row.ItemArray[0];
 
-        }
+            RemovefromDataGrid(dataGridView_Cart, "sp_remove_course_from_cart", course_sectionID, cartCounter);
 
-        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-
-        }
-
-        private void btn_dropCourse_Click(object sender, EventArgs e)
-        {
-            int row = dataGridView_Enrolled.CurrentCell.RowIndex;
-            dataGridView_Enrolled.Rows.RemoveAt(row);
+            dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
         }
 
         private void btn_enroll_Click(object sender, EventArgs e)
@@ -275,12 +192,12 @@ namespace ClassRegistry
 
                 try
                 {
-                    if (buttonClickCounter < 5)
+                    if (scheduleCounter < 5)
                     {
                         sqlCon.Open();
                         sqlCmd.ExecuteNonQuery();
                         sqlCmdRemove.ExecuteNonQuery();
-                        buttonClickCounter += 1;
+                        scheduleCounter += 1;
                     }
                     else
                     {
@@ -294,6 +211,81 @@ namespace ClassRegistry
             }
             dataGridView_CourseData_Bind(dataGridView_Enrolled, "sp_get_enrolled");
             dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
+            refreshCourseSections();
         }
+
+        private void btn_dropCourse_Click(object sender, EventArgs e)
+        {
+            //int row = dataGridView_Enrolled.CurrentCell.RowIndex;
+            //dataGridView_Enrolled.Rows.RemoveAt(row);
+
+            DataRowView row = (DataRowView)dataGridView_Enrolled.SelectedRows[0].DataBoundItem;
+            int course_sectionID = (int)row.Row.ItemArray[0];
+
+            RemovefromDataGrid(dataGridView_Enrolled, "sp_remove_course_from_enrolled", course_sectionID, scheduleCounter);
+
+            dataGridView_CourseData_Bind(dataGridView_Enrolled, "sp_get_enrolled");
+
+            refreshCourseSections();
+        }
+
+        /// <summary>
+        /// Helper function to bind course data to data grids
+        /// </summary>
+        /// <param name="datagrid">Data Grid View to update</param>
+        /// <param name="spName">Stored procedure of get function</param>
+        private void dataGridView_CourseData_Bind(DataGridView datagrid, string spName)
+        {
+            try
+            {
+                using (SqlConnection sqlConnect = new SqlConnection(connectionString))
+                {
+                    datagrid.Refresh();
+                    sqlConnect.Open();
+                    SqlCommand sqlCmd = new SqlCommand(spName, sqlConnect);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@student_ID", loggedInStudentID);
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    datagrid.DataSource = dataTable;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Helper function for removing courses from grid
+        /// </summary>
+        /// <param name="dataGrid"></param>
+        /// <param name="course_sectionID"></param>
+        private void RemovefromDataGrid(DataGridView dataGrid, string spName, int course_sectionID, int counter)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                SqlCommand sqlCmd = new SqlCommand(spName, sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@studentId", loggedInStudentID);
+                sqlCmd.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+
+                try
+                {
+                    sqlCon.Open();
+                    sqlCmd.ExecuteNonQuery();
+                    if (counter > 0)
+                    {
+                        counter -= 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
     }
 }
