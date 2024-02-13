@@ -35,7 +35,7 @@
             this.loginButton = new System.Windows.Forms.Button();
             this.btn_addToCart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_enroll = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_Course = new System.Windows.Forms.DataGridView();
             this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,13 +53,26 @@
             this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loggedInLabel = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
+            this.removeFromCartButton = new System.Windows.Forms.Button();
             this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
             this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
             this.sp_course_Sections_by_course_IDTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_course_Sections_by_course_IDTableAdapter();
             this.spcourseSectionsbycourseIDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.loggedInLabel = new System.Windows.Forms.Label();
-            this.logOut = new System.Windows.Forms.Button();
-            this.removeFromCartButton = new System.Windows.Forms.Button();
+            this.dataGridView_Enrolled = new System.Windows.Forms.DataGridView();
+            this.coursesectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coursenameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semesterDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calendaryearDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentlyenrolledDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduledayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spgetenrolledBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_get_enrolledTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_get_enrolledTableAdapter();
+            this.btn_dropCourse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
@@ -70,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Enrolled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spgetenrolledBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_Cart
@@ -79,12 +94,12 @@
             this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Cart.Location = new System.Drawing.Point(18, 468);
+            this.dataGridView_Cart.Location = new System.Drawing.Point(14, 458);
             this.dataGridView_Cart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_Cart.Name = "dataGridView_Cart";
             this.dataGridView_Cart.ReadOnly = true;
             this.dataGridView_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Cart.Size = new System.Drawing.Size(1162, 217);
+            this.dataGridView_Cart.Size = new System.Drawing.Size(1167, 217);
             this.dataGridView_Cart.TabIndex = 1;
             // 
             // iDField
@@ -95,7 +110,6 @@
             this.iDField.Name = "iDField";
             this.iDField.Size = new System.Drawing.Size(148, 26);
             this.iDField.TabIndex = 2;
-            this.iDField.TextChanged += new System.EventHandler(this.iDField_TextChanged);
             // 
             // label1
             // 
@@ -110,6 +124,7 @@
             // 
             // loginButton
             // 
+
             this.loginButton.Location = new System.Drawing.Point(318, 28);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
@@ -122,9 +137,8 @@
             // btn_addToCart
             // 
             this.btn_addToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addToCart.Enabled = false;
             this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addToCart.Location = new System.Drawing.Point(1032, 377);
+            this.btn_addToCart.Location = new System.Drawing.Point(1032, 372);
             this.btn_addToCart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_addToCart.Name = "btn_addToCart";
             this.btn_addToCart.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
@@ -132,42 +146,44 @@
             this.btn_addToCart.TabIndex = 7;
             this.btn_addToCart.Text = "Add To Cart";
             this.btn_addToCart.UseVisualStyleBackColor = true;
+            this.btn_addToCart.Visible = false;
             this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 432);
+            this.label3.Location = new System.Drawing.Point(18, 423);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Cart";
             // 
-            // button3
+            // btn_enroll
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(982, 694);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
-            this.button3.Size = new System.Drawing.Size(200, 43);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Enroll to Classes";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_enroll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_enroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enroll.Location = new System.Drawing.Point(982, 685);
+            this.btn_enroll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_enroll.Name = "btn_enroll";
+            this.btn_enroll.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
+            this.btn_enroll.Size = new System.Drawing.Size(200, 43);
+            this.btn_enroll.TabIndex = 9;
+            this.btn_enroll.Text = "Enroll to Classes";
+            this.btn_enroll.UseVisualStyleBackColor = true;
+            this.btn_enroll.Click += new System.EventHandler(this.btn_enroll_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 748);
+            this.label4.Location = new System.Drawing.Point(18, 738);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Current Schedule";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataGridView_Course
             // 
@@ -224,7 +240,6 @@
             this.search_stringToolStripLabel.Name = "search_stringToolStripLabel";
             this.search_stringToolStripLabel.Size = new System.Drawing.Size(113, 22);
             this.search_stringToolStripLabel.Text = "Course Search:";
-            this.search_stringToolStripLabel.Click += new System.EventHandler(this.search_stringToolStripLabel_Click);
             // 
             // search_stringToolStripTextBox
             // 
@@ -306,6 +321,42 @@
             this.courseSectionsBindingSource.DataMember = "Course_Sections";
             this.courseSectionsBindingSource.DataSource = this.classRegistryDataSet1BindingSource;
             // 
+            // loggedInLabel
+            // 
+            this.loggedInLabel.AutoSize = true;
+            this.loggedInLabel.Location = new System.Drawing.Point(330, 23);
+            this.loggedInLabel.Name = "loggedInLabel";
+            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
+            this.loggedInLabel.TabIndex = 13;
+            this.loggedInLabel.Text = "logged in label";
+            this.loggedInLabel.Visible = false;
+            // 
+            // logOut
+            // 
+            this.logOut.Location = new System.Drawing.Point(249, 18);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(75, 23);
+            this.logOut.TabIndex = 14;
+            this.logOut.Text = "Log Out";
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Visible = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
+            // removeFromCartButton
+            // 
+            this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeFromCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeFromCartButton.Location = new System.Drawing.Point(825, 685);
+            this.removeFromCartButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.removeFromCartButton.Name = "removeFromCartButton";
+            this.removeFromCartButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
+            this.removeFromCartButton.Size = new System.Drawing.Size(148, 43);
+            this.removeFromCartButton.TabIndex = 13;
+            this.removeFromCartButton.Text = "Remove from Cart";
+            this.removeFromCartButton.UseVisualStyleBackColor = true;
+            this.removeFromCartButton.Visible = false;
+            this.removeFromCartButton.Click += new System.EventHandler(this.removeFromCartButton_Click);
+            // 
             // sp_search_by_course_nameTableAdapter
             // 
             this.sp_search_by_course_nameTableAdapter.ClearBeforeFill = true;
@@ -323,55 +374,136 @@
             this.spcourseSectionsbycourseIDBindingSource1.DataMember = "sp_course_Sections_by_course_ID";
             this.spcourseSectionsbycourseIDBindingSource1.DataSource = this.classRegistryDataSet1;
             // 
-            // loggedInLabel
+            // dataGridView_Enrolled
             // 
-            this.loggedInLabel.AutoSize = true;
-            this.loggedInLabel.Location = new System.Drawing.Point(304, 23);
-            this.loggedInLabel.Name = "loggedInLabel";
-            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
-            this.loggedInLabel.TabIndex = 13;
-            this.loggedInLabel.Text = "logged in label";
-            this.loggedInLabel.Visible = false;
+            this.dataGridView_Enrolled.AllowUserToAddRows = false;
+            this.dataGridView_Enrolled.AllowUserToDeleteRows = false;
+            this.dataGridView_Enrolled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_Enrolled.AutoGenerateColumns = false;
+            this.dataGridView_Enrolled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Enrolled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.coursesectionIDDataGridViewTextBoxColumn,
+            this.coursenameDataGridViewTextBoxColumn1,
+            this.semesterDataGridViewTextBoxColumn1,
+            this.calendaryearDataGridViewTextBoxColumn1,
+            this.capacityDataGridViewTextBoxColumn1,
+            this.currentlyenrolledDataGridViewTextBoxColumn1,
+            this.scheduledayDataGridViewTextBoxColumn,
+            this.starttimeDataGridViewTextBoxColumn,
+            this.endtimeDataGridViewTextBoxColumn});
+            this.dataGridView_Enrolled.DataSource = this.spgetenrolledBindingSource;
+            this.dataGridView_Enrolled.Location = new System.Drawing.Point(14, 774);
+            this.dataGridView_Enrolled.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_Enrolled.Name = "dataGridView_Enrolled";
+            this.dataGridView_Enrolled.ReadOnly = true;
+            this.dataGridView_Enrolled.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Enrolled.Size = new System.Drawing.Size(1167, 214);
+            this.dataGridView_Enrolled.TabIndex = 14;
             // 
-            // logOut
+            // coursesectionIDDataGridViewTextBoxColumn
             // 
-            this.logOut.Location = new System.Drawing.Point(665, 13);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(75, 23);
-            this.logOut.TabIndex = 14;
-            this.logOut.Text = "Log Out";
-            this.logOut.UseVisualStyleBackColor = true;
-            this.logOut.Visible = false;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            this.coursesectionIDDataGridViewTextBoxColumn.DataPropertyName = "course_section_ID";
+            this.coursesectionIDDataGridViewTextBoxColumn.HeaderText = "course_section_ID";
+            this.coursesectionIDDataGridViewTextBoxColumn.Name = "coursesectionIDDataGridViewTextBoxColumn";
+            this.coursesectionIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // removeFromCartButton
+            // coursenameDataGridViewTextBoxColumn1
             // 
-            this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeFromCartButton.Enabled = false;
-            this.removeFromCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeFromCartButton.Location = new System.Drawing.Point(1032, 421);
-            this.removeFromCartButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.removeFromCartButton.Name = "removeFromCartButton";
-            this.removeFromCartButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 5);
-            this.removeFromCartButton.Size = new System.Drawing.Size(148, 42);
-            this.removeFromCartButton.TabIndex = 13;
-            this.removeFromCartButton.Text = "Remove from Cart";
-            this.removeFromCartButton.UseVisualStyleBackColor = true;
-            this.removeFromCartButton.Click += new System.EventHandler(this.removeFromCartButton_Click);
+            this.coursenameDataGridViewTextBoxColumn1.DataPropertyName = "course_name";
+            this.coursenameDataGridViewTextBoxColumn1.HeaderText = "course_name";
+            this.coursenameDataGridViewTextBoxColumn1.Name = "coursenameDataGridViewTextBoxColumn1";
+            this.coursenameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // semesterDataGridViewTextBoxColumn1
+            // 
+            this.semesterDataGridViewTextBoxColumn1.DataPropertyName = "semester";
+            this.semesterDataGridViewTextBoxColumn1.HeaderText = "semester";
+            this.semesterDataGridViewTextBoxColumn1.Name = "semesterDataGridViewTextBoxColumn1";
+            this.semesterDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // calendaryearDataGridViewTextBoxColumn1
+            // 
+            this.calendaryearDataGridViewTextBoxColumn1.DataPropertyName = "calendar_year";
+            this.calendaryearDataGridViewTextBoxColumn1.HeaderText = "calendar_year";
+            this.calendaryearDataGridViewTextBoxColumn1.Name = "calendaryearDataGridViewTextBoxColumn1";
+            this.calendaryearDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // capacityDataGridViewTextBoxColumn1
+            // 
+            this.capacityDataGridViewTextBoxColumn1.DataPropertyName = "capacity";
+            this.capacityDataGridViewTextBoxColumn1.HeaderText = "capacity";
+            this.capacityDataGridViewTextBoxColumn1.Name = "capacityDataGridViewTextBoxColumn1";
+            this.capacityDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // currentlyenrolledDataGridViewTextBoxColumn1
+            // 
+            this.currentlyenrolledDataGridViewTextBoxColumn1.DataPropertyName = "currently_enrolled";
+            this.currentlyenrolledDataGridViewTextBoxColumn1.HeaderText = "currently_enrolled";
+            this.currentlyenrolledDataGridViewTextBoxColumn1.Name = "currentlyenrolledDataGridViewTextBoxColumn1";
+            this.currentlyenrolledDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // scheduledayDataGridViewTextBoxColumn
+            // 
+            this.scheduledayDataGridViewTextBoxColumn.DataPropertyName = "schedule_day";
+            this.scheduledayDataGridViewTextBoxColumn.HeaderText = "schedule_day";
+            this.scheduledayDataGridViewTextBoxColumn.Name = "scheduledayDataGridViewTextBoxColumn";
+            this.scheduledayDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // starttimeDataGridViewTextBoxColumn
+            // 
+            this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "start_time";
+            this.starttimeDataGridViewTextBoxColumn.HeaderText = "start_time";
+            this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
+            this.starttimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endtimeDataGridViewTextBoxColumn
+            // 
+            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "end_time";
+            this.endtimeDataGridViewTextBoxColumn.HeaderText = "end_time";
+            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
+            this.endtimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spgetenrolledBindingSource
+            // 
+            this.spgetenrolledBindingSource.DataMember = "sp_get_enrolled";
+            this.spgetenrolledBindingSource.DataSource = this.classRegistryDataSet1;
+            // 
+            // sp_get_enrolledTableAdapter
+            // 
+            this.sp_get_enrolledTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_dropCourse
+            // 
+            this.btn_dropCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_dropCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dropCourse.Location = new System.Drawing.Point(982, 994);
+            this.btn_dropCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_dropCourse.Name = "btn_dropCourse";
+            this.btn_dropCourse.Size = new System.Drawing.Size(200, 48);
+            this.btn_dropCourse.TabIndex = 15;
+            this.btn_dropCourse.Text = "Drop Course";
+            this.btn_dropCourse.UseVisualStyleBackColor = true;
+            this.btn_dropCourse.Click += new System.EventHandler(this.btn_dropCourse_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1212, 982);
+            this.ClientSize = new System.Drawing.Size(1212, 1057);
+            this.Controls.Add(this.btn_dropCourse);
+            this.Controls.Add(this.dataGridView_Enrolled);
             this.Controls.Add(this.removeFromCartButton);
             this.Controls.Add(this.dataGridView_CourseSections);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_enroll);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_addToCart);
             this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.logOut);
+            this.Controls.Add(this.loggedInLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
@@ -392,6 +524,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Enrolled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spgetenrolledBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +538,7 @@
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button btn_addToCart;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_enroll;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView_Course;
         private System.Windows.Forms.DataGridViewTextBoxColumn coursenameDataGridViewTextBoxColumn;
@@ -430,6 +564,19 @@
         private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Button logOut;
         private System.Windows.Forms.Button removeFromCartButton;
+        private System.Windows.Forms.DataGridView dataGridView_Enrolled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coursesectionIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coursenameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calendaryearDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentlyenrolledDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduledayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource spgetenrolledBindingSource;
+        private ClassRegistryDataSet1TableAdapters.sp_get_enrolledTableAdapter sp_get_enrolledTableAdapter;
+        private System.Windows.Forms.Button btn_dropCourse;
     }
 }
 
