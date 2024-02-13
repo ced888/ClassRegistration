@@ -124,6 +124,7 @@
             // 
             // loginButton
             // 
+
             this.loginButton.Location = new System.Drawing.Point(318, 28);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
@@ -145,6 +146,7 @@
             this.btn_addToCart.TabIndex = 7;
             this.btn_addToCart.Text = "Add To Cart";
             this.btn_addToCart.UseVisualStyleBackColor = true;
+            this.btn_addToCart.Visible = false;
             this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
             // 
             // label3
@@ -322,7 +324,7 @@
             // loggedInLabel
             // 
             this.loggedInLabel.AutoSize = true;
-            this.loggedInLabel.Location = new System.Drawing.Point(304, 23);
+            this.loggedInLabel.Location = new System.Drawing.Point(330, 23);
             this.loggedInLabel.Name = "loggedInLabel";
             this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
             this.loggedInLabel.TabIndex = 13;
@@ -331,7 +333,7 @@
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(665, 13);
+            this.logOut.Location = new System.Drawing.Point(249, 18);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(75, 23);
             this.logOut.TabIndex = 14;
@@ -352,6 +354,7 @@
             this.removeFromCartButton.TabIndex = 13;
             this.removeFromCartButton.Text = "Remove from Cart";
             this.removeFromCartButton.UseVisualStyleBackColor = true;
+            this.removeFromCartButton.Visible = false;
             this.removeFromCartButton.Click += new System.EventHandler(this.removeFromCartButton_Click);
             // 
             // sp_search_by_course_nameTableAdapter
@@ -499,6 +502,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_addToCart);
             this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.logOut);
+            this.Controls.Add(this.loggedInLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
