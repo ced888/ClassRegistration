@@ -31,18 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView_Cart = new System.Windows.Forms.DataGridView();
             this.iDField = new System.Windows.Forms.TextBox();
-            this.iDField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.btn_addToCart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_Course = new System.Windows.Forms.DataGridView();
-            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
             this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spsearchbycoursenameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classRegistryDataSet1 = new ClassRegistry.ClassRegistryDataSet1();
@@ -55,14 +50,8 @@
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendaryearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeslotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currentlyenrolledDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calendaryearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeslotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spcourseSectionsbycourseIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classRegistryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_search_by_course_nameTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.sp_search_by_course_nameTableAdapter();
             this.course_SectionsTableAdapter = new ClassRegistry.ClassRegistryDataSet1TableAdapters.Course_SectionsTableAdapter();
@@ -75,13 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Course)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spsearchbycoursenameBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1)).BeginInit();
             this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CourseSections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classRegistryDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcourseSectionsbycourseIDBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -438,9 +424,7 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView_Cart;
         private System.Windows.Forms.TextBox iDField;
-        private System.Windows.Forms.TextBox iDField;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button btn_addToCart;
         private System.Windows.Forms.Label label3;
