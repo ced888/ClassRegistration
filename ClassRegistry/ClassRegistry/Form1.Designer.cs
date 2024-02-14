@@ -124,8 +124,7 @@
             // 
             // loginButton
             // 
-
-            this.loginButton.Location = new System.Drawing.Point(318, 28);
+            this.loginButton.Location = new System.Drawing.Point(315, 24);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(112, 35);
@@ -324,18 +323,18 @@
             // loggedInLabel
             // 
             this.loggedInLabel.AutoSize = true;
-            this.loggedInLabel.Location = new System.Drawing.Point(330, 23);
+            this.loggedInLabel.Location = new System.Drawing.Point(449, 28);
             this.loggedInLabel.Name = "loggedInLabel";
-            this.loggedInLabel.Size = new System.Drawing.Size(75, 13);
+            this.loggedInLabel.Size = new System.Drawing.Size(110, 20);
             this.loggedInLabel.TabIndex = 13;
             this.loggedInLabel.Text = "logged in label";
             this.loggedInLabel.Visible = false;
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(249, 18);
+            this.logOut.Location = new System.Drawing.Point(314, 24);
             this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(75, 23);
+            this.logOut.Size = new System.Drawing.Size(112, 36);
             this.logOut.TabIndex = 14;
             this.logOut.Text = "Log Out";
             this.logOut.UseVisualStyleBackColor = true;
