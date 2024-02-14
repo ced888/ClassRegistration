@@ -95,14 +95,14 @@
             // 
             this.dataGridView_Cart.AllowUserToAddRows = false;
             this.dataGridView_Cart.AllowUserToDeleteRows = false;
-            this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Cart.Location = new System.Drawing.Point(9, 298);
             this.dataGridView_Cart.Name = "dataGridView_Cart";
             this.dataGridView_Cart.ReadOnly = true;
             this.dataGridView_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Cart.Size = new System.Drawing.Size(1120, 141);
+            this.dataGridView_Cart.Size = new System.Drawing.Size(778, 141);
             this.dataGridView_Cart.TabIndex = 1;
             // 
             // iDField
@@ -125,7 +125,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(212, 18);
+            this.loginButton.Location = new System.Drawing.Point(210, 16);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 4;
@@ -137,7 +137,7 @@
             // 
             this.btn_addToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addToCart.Location = new System.Drawing.Point(1030, 242);
+            this.btn_addToCart.Location = new System.Drawing.Point(688, 242);
             this.btn_addToCart.Name = "btn_addToCart";
             this.btn_addToCart.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
             this.btn_addToCart.Size = new System.Drawing.Size(99, 27);
@@ -160,7 +160,7 @@
             // 
             this.btn_enroll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_enroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enroll.Location = new System.Drawing.Point(997, 445);
+            this.btn_enroll.Location = new System.Drawing.Point(655, 445);
             this.btn_enroll.Name = "btn_enroll";
             this.btn_enroll.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
             this.btn_enroll.Size = new System.Drawing.Size(133, 28);
@@ -227,7 +227,7 @@
             // 
             this.dataGridView_CourseSections.AllowUserToAddRows = false;
             this.dataGridView_CourseSections.AllowUserToDeleteRows = false;
-            this.dataGridView_CourseSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_CourseSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_CourseSections.AutoGenerateColumns = false;
             this.dataGridView_CourseSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -238,15 +238,15 @@
             this.calendaryearDataGridViewTextBoxColumn,
             this.capacityDataGridViewTextBoxColumn,
             this.currentlyenrolledDataGridViewTextBoxColumn,
-            this.scheduledayDataGridViewTextBoxColumn1,
-            this.starttimeDataGridViewTextBoxColumn1,
-            this.endtimeDataGridViewTextBoxColumn1});
-            this.dataGridView_CourseSections.DataSource = this.spcourseSectionsbycourseID1BindingSource;
+            this.semesterDataGridViewTextBoxColumn,
+            this.calendaryearDataGridViewTextBoxColumn,
+            this.timeslotIDDataGridViewTextBoxColumn});
+            this.dataGridView_CourseSections.DataSource = this.spcourseSectionsbycourseIDBindingSource;
             this.dataGridView_CourseSections.Location = new System.Drawing.Point(184, 86);
             this.dataGridView_CourseSections.Name = "dataGridView_CourseSections";
             this.dataGridView_CourseSections.ReadOnly = true;
             this.dataGridView_CourseSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_CourseSections.Size = new System.Drawing.Size(945, 150);
+            this.dataGridView_CourseSections.Size = new System.Drawing.Size(603, 150);
             this.dataGridView_CourseSections.TabIndex = 12;
             // 
             // courseSectionsBindingSource
@@ -257,8 +257,7 @@
             // loggedInLabel
             // 
             this.loggedInLabel.AutoSize = true;
-            this.loggedInLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loggedInLabel.Location = new System.Drawing.Point(292, 19);
+            this.loggedInLabel.Location = new System.Drawing.Point(299, 18);
             this.loggedInLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loggedInLabel.Name = "loggedInLabel";
             this.loggedInLabel.Size = new System.Drawing.Size(101, 18);
@@ -268,8 +267,8 @@
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(212, 18);
-            this.logOut.Margin = new System.Windows.Forms.Padding(2);
+            this.logOut.Location = new System.Drawing.Point(209, 16);
+            this.logOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(75, 23);
             this.logOut.TabIndex = 14;
@@ -282,7 +281,7 @@
             // 
             this.removeFromCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeFromCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeFromCartButton.Location = new System.Drawing.Point(892, 445);
+            this.removeFromCartButton.Location = new System.Drawing.Point(550, 445);
             this.removeFromCartButton.Name = "removeFromCartButton";
             this.removeFromCartButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
             this.removeFromCartButton.Size = new System.Drawing.Size(99, 28);
@@ -296,7 +295,7 @@
             // 
             this.dataGridView_Enrolled.AllowUserToAddRows = false;
             this.dataGridView_Enrolled.AllowUserToDeleteRows = false;
-            this.dataGridView_Enrolled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_Enrolled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Enrolled.AutoGenerateColumns = false;
             this.dataGridView_Enrolled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -315,12 +314,12 @@
             this.dataGridView_Enrolled.Name = "dataGridView_Enrolled";
             this.dataGridView_Enrolled.ReadOnly = true;
             this.dataGridView_Enrolled.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Enrolled.Size = new System.Drawing.Size(1120, 139);
+            this.dataGridView_Enrolled.Size = new System.Drawing.Size(778, 139);
             this.dataGridView_Enrolled.TabIndex = 14;
             // 
             // btn_dropCourse
             // 
-            this.btn_dropCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_dropCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_dropCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dropCourse.Location = new System.Drawing.Point(997, 646);
@@ -436,85 +435,22 @@
             // 
             // spcourseSectionsbycourseID1BindingSource
             // 
-            this.spcourseSectionsbycourseID1BindingSource.DataMember = "sp_course_Sections_by_course_ID1";
-            this.spcourseSectionsbycourseID1BindingSource.DataSource = this.classRegistryDataSet1;
-            // 
-            // sp_course_Sections_by_course_ID1TableAdapter
-            // 
-            this.sp_course_Sections_by_course_ID1TableAdapter.ClearBeforeFill = true;
-            // 
-            // courseIDDataGridViewTextBoxColumn
-            // 
-            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "course_ID";
-            this.courseIDDataGridViewTextBoxColumn.HeaderText = "course_ID";
-            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
-            this.courseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // coursesectionIDDataGridViewTextBoxColumn1
-            // 
-            this.coursesectionIDDataGridViewTextBoxColumn1.DataPropertyName = "course_section_ID";
-            this.coursesectionIDDataGridViewTextBoxColumn1.HeaderText = "course_section_ID";
-            this.coursesectionIDDataGridViewTextBoxColumn1.Name = "coursesectionIDDataGridViewTextBoxColumn1";
-            this.coursesectionIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // semesterDataGridViewTextBoxColumn
-            // 
-            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "semester";
-            this.semesterDataGridViewTextBoxColumn.HeaderText = "semester";
-            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
-            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // calendaryearDataGridViewTextBoxColumn
-            // 
-            this.calendaryearDataGridViewTextBoxColumn.DataPropertyName = "calendar_year";
-            this.calendaryearDataGridViewTextBoxColumn.HeaderText = "calendar_year";
-            this.calendaryearDataGridViewTextBoxColumn.Name = "calendaryearDataGridViewTextBoxColumn";
-            this.calendaryearDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // capacityDataGridViewTextBoxColumn
-            // 
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "capacity";
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // currentlyenrolledDataGridViewTextBoxColumn
-            // 
-            this.currentlyenrolledDataGridViewTextBoxColumn.DataPropertyName = "currently_enrolled";
-            this.currentlyenrolledDataGridViewTextBoxColumn.HeaderText = "currently_enrolled";
-            this.currentlyenrolledDataGridViewTextBoxColumn.Name = "currentlyenrolledDataGridViewTextBoxColumn";
-            this.currentlyenrolledDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scheduledayDataGridViewTextBoxColumn1
-            // 
-            this.scheduledayDataGridViewTextBoxColumn1.DataPropertyName = "schedule_day";
-            this.scheduledayDataGridViewTextBoxColumn1.HeaderText = "schedule_day";
-            this.scheduledayDataGridViewTextBoxColumn1.Name = "scheduledayDataGridViewTextBoxColumn1";
-            this.scheduledayDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // starttimeDataGridViewTextBoxColumn1
-            // 
-            this.starttimeDataGridViewTextBoxColumn1.DataPropertyName = "start_time";
-            this.starttimeDataGridViewTextBoxColumn1.HeaderText = "start_time";
-            this.starttimeDataGridViewTextBoxColumn1.Name = "starttimeDataGridViewTextBoxColumn1";
-            this.starttimeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // endtimeDataGridViewTextBoxColumn1
-            // 
-            this.endtimeDataGridViewTextBoxColumn1.DataPropertyName = "end_time";
-            this.endtimeDataGridViewTextBoxColumn1.HeaderText = "end_time";
-            this.endtimeDataGridViewTextBoxColumn1.Name = "endtimeDataGridViewTextBoxColumn1";
-            this.endtimeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // course_SectionsTableAdapter
-            // 
-            this.course_SectionsTableAdapter.ClearBeforeFill = true;
+            this.btn_dropCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_dropCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dropCourse.Location = new System.Drawing.Point(655, 646);
+            this.btn_dropCourse.Name = "btn_dropCourse";
+            this.btn_dropCourse.Size = new System.Drawing.Size(133, 31);
+            this.btn_dropCourse.TabIndex = 15;
+            this.btn_dropCourse.Text = "Drop Course";
+            this.btn_dropCourse.UseVisualStyleBackColor = true;
+            this.btn_dropCourse.Click += new System.EventHandler(this.btn_dropCourse_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 687);
+            this.ClientSize = new System.Drawing.Size(808, 687);
             this.Controls.Add(this.btn_dropCourse);
             this.Controls.Add(this.dataGridView_Enrolled);
             this.Controls.Add(this.removeFromCartButton);
@@ -531,6 +467,7 @@
             this.Controls.Add(this.iDField);
             this.Controls.Add(this.dataGridView_Cart);
             this.Controls.Add(this.dataGridView_Course);
+            this.MinimumSize = new System.Drawing.Size(824, 677);
             this.Name = "Form1";
             this.Text = "Class Registration";
             this.Load += new System.EventHandler(this.Form1_Load);

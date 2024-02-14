@@ -65,6 +65,9 @@ namespace ClassRegistry
                     logOut.Visible = true;
                     loginButton.Visible = false;
                     iDField.ReadOnly = true;
+                    removeFromCartButton.Visible = true;
+                    btn_addToCart.Visible = true;
+
                     dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
                     dataGridView_CourseData_Bind(dataGridView_Enrolled, "sp_get_enrolled");
 
@@ -154,7 +157,7 @@ namespace ClassRegistry
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
 
-                SqlCommand sqlCmdCheckPreReq = new SqlCommand("spTest", sqlCon);
+                SqlCommand sqlCmdCheckPreReq = new SqlCommand("sp_getPreReqsNotTaken", sqlCon);
                 sqlCmdCheckPreReq.CommandType = CommandType.StoredProcedure;
                 sqlCmdCheckPreReq.Parameters.AddWithValue("@Student1", loggedInStudentID);
                 sqlCmdCheckPreReq.Parameters.AddWithValue("@courseSecId", course_sectionID);
@@ -217,23 +220,23 @@ namespace ClassRegistry
                             courseName = sqlCmdGetCourseName.ExecuteScalar().ToString().TrimEnd();
                             prereqString += courseName + ", ";
                         }
-                        catch(Exception exc)
+                        catch (Exception exc)
                         {
                             System.Windows.Forms.MessageBox.Show(exc.Message);
                         }
-                        
-                        
+
+
                     }
                     System.Windows.Forms.MessageBox.Show("The follow prereqs are required: " + prereqString);
                 }
-                
+
             }
             dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
+
         }
 
         private void removeFromCartButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
@@ -275,6 +278,7 @@ namespace ClassRegistry
         private void btn_enroll_Click(object sender, EventArgs e)
         {
             DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
+            //Grabs the course_section id and course id integers
             int course_sectionID = (int)row.Row.ItemArray[0];
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -288,6 +292,9 @@ namespace ClassRegistry
                 sqlCmdRemove.CommandType = CommandType.StoredProcedure;
                 sqlCmdRemove.Parameters.AddWithValue("@studentId", loggedInStudentID);
                 sqlCmdRemove.Parameters.AddWithValue("@courseSectionId", course_sectionID);
+
+
+
 
                 try
                 {
@@ -315,6 +322,9 @@ namespace ClassRegistry
 
         private void btn_dropCourse_Click(object sender, EventArgs e)
         {
+            //int row = dataGridView_Enrolled.CurrentCell.RowIndex;
+            //dataGridView_Enrolled.Rows.RemoveAt(row);
+
             DataRowView row = (DataRowView)dataGridView_Enrolled.SelectedRows[0].DataBoundItem;
             int course_sectionID = (int)row.Row.ItemArray[0];
 
@@ -325,6 +335,11 @@ namespace ClassRegistry
             refreshCourseSections();
         }
 
+        /// <summary>
+        /// Helper function to bind course data to data grids
+        /// </summary>
+        /// <param name="datagrid">Data Grid View to update</param>
+        /// <param name="spName">Stored procedure of get function</param>
         private void dataGridView_CourseData_Bind(DataGridView datagrid, string spName)
         {
             try
@@ -348,6 +363,11 @@ namespace ClassRegistry
             }
         }
 
+        /// <summary>
+        /// Helper function for removing courses from grid
+        /// </summary>
+        /// <param name="dataGrid"></param>
+        /// <param name="course_sectionID"></param>
         private void RemovefromDataGrid(DataGridView dataGrid, string spName, int course_sectionID, int counter)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
