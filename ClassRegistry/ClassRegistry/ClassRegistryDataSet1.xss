@@ -23,15 +23,15 @@
     <Shape ID="DesignTable:Prerequisite1" ZOrder="22" X="3046" Y="64" Height="115" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Taken1" ZOrder="21" X="3337" Y="64" Height="172" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Time_Slot1" ZOrder="20" X="3593" Y="64" Height="153" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:vwCurrentStudentCoursesTaken" ZOrder="19" X="3871" Y="64" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:vwCurrentStudentCoursesTaken" ZOrder="19" X="3871" Y="64" Height="153" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:sp_course_sections_by_cart" ZOrder="18" X="4241" Y="64" Height="248" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:sp_course_Sections_by_course_ID1" ZOrder="17" X="4610" Y="64" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
+    <Shape ID="DesignTable:sp_course_Sections_by_course_ID1" ZOrder="17" X="4610" Y="64" Height="267" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:sp_get_course_count_from_cart" ZOrder="16" X="4980" Y="64" Height="96" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
     <Shape ID="DesignTable:sp_get_enrolled" ZOrder="15" X="5350" Y="64" Height="248" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:sp_getPreReqsNotTaken" ZOrder="14" X="5655" Y="64" Height="96" Width="286" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
     <Shape ID="DesignTable:sp_search_by_course_name1" ZOrder="13" X="6011" Y="64" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="29" X="1238" Y="64" Height="257" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
     <Shape ID="DesignTable:sp_get_course_name" ZOrder="1" X="6381" Y="64" Height="96" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="29" X="1238" Y="64" Height="257" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__Cart__course_sec__395884C4" ZOrder="37" LineWidth="11">

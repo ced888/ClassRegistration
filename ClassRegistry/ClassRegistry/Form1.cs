@@ -119,9 +119,9 @@ namespace ClassRegistry
                 //Grab the data row selected from the grid
                 DataRowView row = (DataRowView)dataGridView_Course.SelectedRows[0].DataBoundItem;
                 //Grabs the course_id int
-                int x = (int)row.Row.ItemArray[1];
+                int courseId = (int)row.Row["course_ID"];
                 //Fills the course section data grid with current selected course
-                this.sp_course_Sections_by_course_ID1TableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID1, x);
+                this.sp_course_Sections_by_course_ID1TableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID1, courseId);
             }
         }
 
@@ -129,9 +129,9 @@ namespace ClassRegistry
         {
             DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
             //Grabs the course_section id and course id integers
-            int course_sectionID = (int)row.Row.ItemArray[6];
-            int timeSlotId = (int)row.Row.ItemArray[4];
 
+            int course_sectionID = (int)row.Row["course_Section_ID"];
+            int timeSlotId = (int)row.Row["time_slot_ID"];
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -242,7 +242,7 @@ namespace ClassRegistry
                 //DataRowView row = (DataRowView)dataGridView_CourseSections.SelectedRows[0].DataBoundItem;
                 //Grabs the course_section id and course id integers
                 DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
-                int course_sectionID = (int)row.Row.ItemArray[0];
+                int course_sectionID = (int)row.Row["course_Section_ID"];
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     SqlCommand sqlCmd = new SqlCommand("sp_remove_course_from_cart", sqlCon);
@@ -279,7 +279,7 @@ namespace ClassRegistry
         {
             DataRowView row = (DataRowView)dataGridView_Cart.SelectedRows[0].DataBoundItem;
             //Grabs the course_section id and course id integers
-            int course_sectionID = (int)row.Row.ItemArray[0];
+            int course_sectionID = (int)row.Row["course_Section_ID"];
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -326,7 +326,7 @@ namespace ClassRegistry
             //dataGridView_Enrolled.Rows.RemoveAt(row);
 
             DataRowView row = (DataRowView)dataGridView_Enrolled.SelectedRows[0].DataBoundItem;
-            int course_sectionID = (int)row.Row.ItemArray[0];
+            int course_sectionID = (int)row.Row["course_Section_ID"];
 
             RemovefromDataGrid(dataGridView_Enrolled, "sp_remove_course_from_enrolled", course_sectionID, scheduleCounter);
 

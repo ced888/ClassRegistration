@@ -6334,8 +6334,6 @@ namespace ClassRegistry {
             
             private global::System.Data.DataColumn columnis_active;
             
-            private global::System.Data.DataColumn columnExpr1;
-            
             private global::System.Data.DataColumn columncourse_ID;
             
             private global::System.Data.DataColumn columntaken;
@@ -6386,14 +6384,6 @@ namespace ClassRegistry {
             public global::System.Data.DataColumn is_activeColumn {
                 get {
                     return this.columnis_active;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
                 }
             }
             
@@ -6450,12 +6440,11 @@ namespace ClassRegistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public vwCurrentStudentCoursesTakenRow AddvwCurrentStudentCoursesTakenRow(int student_ID, bool is_active, int Expr1, int course_ID, bool taken) {
+            public vwCurrentStudentCoursesTakenRow AddvwCurrentStudentCoursesTakenRow(int student_ID, bool is_active, int course_ID, bool taken) {
                 vwCurrentStudentCoursesTakenRow rowvwCurrentStudentCoursesTakenRow = ((vwCurrentStudentCoursesTakenRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         student_ID,
                         is_active,
-                        Expr1,
                         course_ID,
                         taken};
                 rowvwCurrentStudentCoursesTakenRow.ItemArray = columnValuesArray;
@@ -6489,7 +6478,6 @@ namespace ClassRegistry {
             internal void InitVars() {
                 this.columnstudent_ID = base.Columns["student_ID"];
                 this.columnis_active = base.Columns["is_active"];
-                this.columnExpr1 = base.Columns["Expr1"];
                 this.columncourse_ID = base.Columns["course_ID"];
                 this.columntaken = base.Columns["taken"];
             }
@@ -6501,8 +6489,6 @@ namespace ClassRegistry {
                 base.Columns.Add(this.columnstudent_ID);
                 this.columnis_active = new global::System.Data.DataColumn("is_active", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnis_active);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
                 this.columncourse_ID = new global::System.Data.DataColumn("course_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourse_ID);
                 this.columntaken = new global::System.Data.DataColumn("taken", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -6512,7 +6498,6 @@ namespace ClassRegistry {
                 this.columnstudent_ID.AllowDBNull = false;
                 this.columnstudent_ID.Unique = true;
                 this.columnis_active.AllowDBNull = false;
-                this.columnExpr1.AllowDBNull = false;
                 this.columncourse_ID.AllowDBNull = false;
                 this.columntaken.AllowDBNull = false;
             }
@@ -7038,6 +7023,8 @@ namespace ClassRegistry {
             
             private global::System.Data.DataColumn columnend_time;
             
+            private global::System.Data.DataColumn columntime_slot_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_course_Sections_by_course_ID1DataTable() {
@@ -7145,6 +7132,14 @@ namespace ClassRegistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn time_slot_IDColumn {
+                get {
+                    return this.columntime_slot_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7180,7 +7175,7 @@ namespace ClassRegistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_course_Sections_by_course_ID1Row Addsp_course_Sections_by_course_ID1Row(int course_ID, int course_section_ID, string semester, int calendar_year, int capacity, int currently_enrolled, string schedule_day, string start_time, string end_time) {
+            public sp_course_Sections_by_course_ID1Row Addsp_course_Sections_by_course_ID1Row(int course_ID, int course_section_ID, string semester, int calendar_year, int capacity, int currently_enrolled, string schedule_day, string start_time, string end_time, int time_slot_ID) {
                 sp_course_Sections_by_course_ID1Row rowsp_course_Sections_by_course_ID1Row = ((sp_course_Sections_by_course_ID1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         course_ID,
@@ -7191,7 +7186,8 @@ namespace ClassRegistry {
                         currently_enrolled,
                         schedule_day,
                         start_time,
-                        end_time};
+                        end_time,
+                        time_slot_ID};
                 rowsp_course_Sections_by_course_ID1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_course_Sections_by_course_ID1Row);
                 return rowsp_course_Sections_by_course_ID1Row;
@@ -7230,6 +7226,7 @@ namespace ClassRegistry {
                 this.columnschedule_day = base.Columns["schedule_day"];
                 this.columnstart_time = base.Columns["start_time"];
                 this.columnend_time = base.Columns["end_time"];
+                this.columntime_slot_ID = base.Columns["time_slot_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7253,6 +7250,8 @@ namespace ClassRegistry {
                 base.Columns.Add(this.columnstart_time);
                 this.columnend_time = new global::System.Data.DataColumn("end_time", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnend_time);
+                this.columntime_slot_ID = new global::System.Data.DataColumn("time_slot_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntime_slot_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncourse_section_ID}, true));
                 this.columncourse_ID.AllowDBNull = false;
@@ -7268,6 +7267,7 @@ namespace ClassRegistry {
                 this.columnstart_time.MaxLength = 50;
                 this.columnend_time.AllowDBNull = false;
                 this.columnend_time.MaxLength = 50;
+                this.columntime_slot_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10254,17 +10254,6 @@ namespace ClassRegistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr1 {
-                get {
-                    return ((int)(this[this.tablevwCurrentStudentCoursesTaken.Expr1Column]));
-                }
-                set {
-                    this[this.tablevwCurrentStudentCoursesTaken.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int course_ID {
                 get {
                     return ((int)(this[this.tablevwCurrentStudentCoursesTaken.course_IDColumn]));
@@ -10534,6 +10523,17 @@ namespace ClassRegistry {
                 }
                 set {
                     this[this.tablesp_course_Sections_by_course_ID1.end_timeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int time_slot_ID {
+                get {
+                    return ((int)(this[this.tablesp_course_Sections_by_course_ID1.time_slot_IDColumn]));
+                }
+                set {
+                    this[this.tablesp_course_Sections_by_course_ID1.time_slot_IDColumn] = value;
                 }
             }
             
@@ -16675,7 +16675,6 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
             tableMapping.DataSetTable = "vwCurrentStudentCoursesTaken";
             tableMapping.ColumnMappings.Add("student_ID", "student_ID");
             tableMapping.ColumnMappings.Add("is_active", "is_active");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("course_ID", "course_ID");
             tableMapping.ColumnMappings.Add("taken", "taken");
             this._adapter.TableMappings.Add(tableMapping);
@@ -16694,8 +16693,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT student_ID, is_active, Expr1, course_ID, taken FROM dbo.vwCurrentStudentCo" +
-                "ursesTaken";
+            this._commandCollection[0].CommandText = "SELECT student_ID, is_active, course_ID, taken FROM vwCurrentStudentCoursesTaken";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17043,6 +17041,7 @@ SELECT time_slot_ID, schedule_day, start_time, end_time FROM Time_Slot WHERE (ti
             tableMapping.ColumnMappings.Add("schedule_day", "schedule_day");
             tableMapping.ColumnMappings.Add("start_time", "start_time");
             tableMapping.ColumnMappings.Add("end_time", "end_time");
+            tableMapping.ColumnMappings.Add("time_slot_ID", "time_slot_ID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
