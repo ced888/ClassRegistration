@@ -118,7 +118,7 @@ namespace ClassRegistry
                 //Grabs the course_id int
                 int x = (int)row.Row.ItemArray[1];
                 //Fills the course section data grid with current selected course
-                this.sp_course_Sections_by_course_IDTableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID, x);
+                this.sp_course_Sections_by_course_ID1TableAdapter.Fill(this.classRegistryDataSet1.sp_course_Sections_by_course_ID1, x);
             }
         }
 
@@ -288,9 +288,6 @@ namespace ClassRegistry
                 sqlCmdRemove.CommandType = CommandType.StoredProcedure;
                 sqlCmdRemove.Parameters.AddWithValue("@studentId", loggedInStudentID);
                 sqlCmdRemove.Parameters.AddWithValue("@courseSectionId", course_sectionID);
-
-  
-
 
                 try
                 {
