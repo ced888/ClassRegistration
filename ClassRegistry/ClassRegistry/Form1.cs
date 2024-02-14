@@ -40,6 +40,12 @@ namespace ClassRegistry
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+            //Disable buttons on load
+            removeFromCartButton.Enabled = false;
+            btn_addToCart.Enabled = false;
+            btn_dropCourse.Enabled = false;
+            btn_enroll.Enabled = false;
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -65,8 +71,12 @@ namespace ClassRegistry
                     logOut.Visible = true;
                     loginButton.Visible = false;
                     iDField.ReadOnly = true;
-                    removeFromCartButton.Visible = true;
-                    btn_addToCart.Visible = true;
+
+                    //Enable buttons
+                    removeFromCartButton.Enabled = true;
+                    btn_addToCart.Enabled = true;
+                    btn_dropCourse.Enabled = true;
+                    btn_enroll.Enabled = true;
 
                     dataGridView_CourseData_Bind(dataGridView_Cart, "sp_course_sections_by_cart");
                     dataGridView_CourseData_Bind(dataGridView_Enrolled, "sp_get_enrolled");
@@ -93,6 +103,17 @@ namespace ClassRegistry
             iDField.ReadOnly = false;
             iDField.Clear();
             loggedInStudentID = null;
+
+            //Disable buttons
+            removeFromCartButton.Enabled = false;
+            btn_addToCart.Enabled = false;
+            btn_dropCourse.Enabled = false;
+            btn_enroll.Enabled = false;
+
+            //Clear Data grids
+            dataGridView_Cart.Rows.Clear();
+            dataGridView_Enrolled.Rows.Clear();
+
         }
 
         private void search_stringToolStripTextBox_TextChanged(object sender, EventArgs e)
@@ -294,16 +315,21 @@ namespace ClassRegistry
                 sqlCmdRemove.Parameters.AddWithValue("@courseSectionId", course_sectionID);
 
 
-
-
                 try
                 {
                     if (scheduleCounter < 5)
                     {
-                        sqlCon.Open();
-                        sqlCmd.ExecuteNonQuery();
-                        sqlCmdRemove.ExecuteNonQuery();
-                        scheduleCounter += 1;
+                        try
+                        {
+                            sqlCon.Open();
+                            sqlCmd.ExecuteNonQuery();
+                            sqlCmdRemove.ExecuteNonQuery();
+                            scheduleCounter += 1;
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message);
+                        }
                     }
                     else
                     {
@@ -415,5 +441,30 @@ namespace ClassRegistry
             }
         }
 
+        private void dataGridView_Cart_Paint(object sender, PaintEventArgs e)
+        {
+            if (dataGridView_Cart.RowCount > 0)
+            {
+                removeFromCartButton.Enabled = true;
+                btn_enroll.Enabled = true;
+            }
+            else
+            {
+                removeFromCartButton.Enabled = false;
+                btn_enroll.Enabled = false;
+            }
+        }
+
+        private void dataGridView_Enrolled_Paint(object sender, PaintEventArgs e)
+        {
+            if (dataGridView_Enrolled.RowCount > 0)
+            {
+                btn_dropCourse.Enabled = true;
+            }
+            else
+            {
+                btn_dropCourse.Enabled = false;
+            }
+        }
     }
 }
